@@ -1,0 +1,47 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "speechturn"
+version = "0.1.0"
+description = "Reproducible audio-instruction data, tiny speech-language training, and streaming contracts"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{name = "Yang Chuanjun", email = "240197673+howervoo@users.noreply.github.com"}]
+dependencies = ["numpy>=1.26,<2.4", "scipy>=1.11,<2", "soundfile>=0.12,<1"]
+
+[project.optional-dependencies]
+train = ["torch>=2.8,<2.9"]
+pretrained = ["torch>=2.8,<2.9", "transformers==4.57.1", "accelerate>=1,<2"]
+dev = ["pytest>=8,<9", "ruff>=0.11,<1", "mypy>=1.15,<2", "build>=1.2,<2", "hatchling>=1.25"]
+
+[project.urls]
+Repository = "https://github.com/howervoo/speechturn"
+Issues = "https://github.com/howervoo/speechturn/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/speechturn"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]
+
+[tool.mypy]
+files = ["src/speechturn"]
+check_untyped_defs = true
+disallow_untyped_defs = true
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = ["transformers.*", "scipy.*", "soundfile.*"]
+follow_imports = "skip"
