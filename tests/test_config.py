@@ -2,6 +2,8 @@
 
 from dataclasses import fields
 
+import pytest
+
 from speechturn.config import SpeechConfig, TrainConfig
 
 
@@ -13,3 +15,8 @@ def test_model_config_round_trip():
 def test_train_config_has_complete_serialization():
     settings = TrainConfig()
     assert set(settings.to_dict()) == {field.name for field in fields(TrainConfig)}
+
+
+def test_configuration_rejects_unknown_fields():
+    with pytest.raises(ValueError):
+        SpeechConfig.from_dict({"unknown": 1})
