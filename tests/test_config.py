@@ -37,3 +37,10 @@ def test_configuration_rejects_unknown_fields():
 def test_cross_field_constraints(values):
     with pytest.raises(ValueError):
         SpeechConfig(**values)
+
+
+def test_configuration_is_immutable():
+    from dataclasses import FrozenInstanceError
+
+    with pytest.raises(FrozenInstanceError):
+        SpeechConfig().n_mels = 80
