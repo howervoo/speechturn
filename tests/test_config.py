@@ -20,3 +20,20 @@ def test_train_config_has_complete_serialization():
 def test_configuration_rejects_unknown_fields():
     with pytest.raises(ValueError):
         SpeechConfig.from_dict({"unknown": 1})
+
+
+@pytest.mark.parametrize(
+    "values",
+    [
+        {"hop_length": 401},
+        {"win_length": 401},
+        {"n_mels": 202},
+        {"model_dim": 49},
+        {"encoder_dim": 33},
+        {"vocab_size": 259},
+        {"max_text_tokens": 1},
+    ],
+)
+def test_cross_field_constraints(values):
+    with pytest.raises(ValueError):
+        SpeechConfig(**values)
