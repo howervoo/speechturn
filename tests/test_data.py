@@ -3,6 +3,8 @@
 import json
 from dataclasses import fields
 
+import pytest
+
 from speechturn.data import AudioExample, load_manifest, save_manifest
 
 
@@ -18,3 +20,9 @@ def test_manifest_full_field_round_trip(tmp_path):
     save_manifest([record], path)
     assert load_manifest(path) == [record]
     assert set(json.loads(path.read_text())) == {field.name for field in fields(AudioExample)}
+
+
+def test_duplicate_ids_rejected_on_write(tmp_path):
+    record = records()[0]
+    with pytest.raises(ValueError):
+        save_manifest([record, record], tmp_path / "bad.jsonl")
