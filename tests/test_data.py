@@ -41,3 +41,10 @@ def test_invalid_json_reports_line_number(tmp_path):
     path.write_text("\n{bad}\n")
     with pytest.raises(ValueError, match="broken.jsonl:2:"):
         load_manifest(path)
+
+
+def test_missing_audio_is_reported(tmp_path):
+    path = tmp_path / "data.jsonl"
+    save_manifest([records()[0]], path)
+    with pytest.raises(ValueError, match="audio file"):
+        load_manifest(path, check_audio=True)
