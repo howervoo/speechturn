@@ -34,3 +34,10 @@ def test_duplicate_ids_rejected_on_read(tmp_path):
     path.write_text(path.read_text() * 2)
     with pytest.raises(ValueError, match=":2: duplicate"):
         load_manifest(path)
+
+
+def test_invalid_json_reports_line_number(tmp_path):
+    path = tmp_path / "broken.jsonl"
+    path.write_text("\n{bad}\n")
+    with pytest.raises(ValueError, match="broken.jsonl:2:"):
+        load_manifest(path)
