@@ -5,7 +5,7 @@ from dataclasses import fields
 
 import pytest
 
-from speechturn.data import AudioExample, load_manifest, save_manifest
+from speechturn.data import AudioExample, load_manifest, save_manifest, split_by_speaker
 
 
 def records():
@@ -48,3 +48,12 @@ def test_missing_audio_is_reported(tmp_path):
     save_manifest([records()[0]], path)
     with pytest.raises(ValueError, match="audio file"):
         load_manifest(path, check_audio=True)
+
+
+def test_split_is_exhaustive_and_disjoint():
+    groups = split_by_speaker(records())
+    ids = [record.id for group in groups.values() for record in group]
+    assert sorted(ids) == sorted(record.id for record in records())
+    speakers = [set(record.speaker for record in group) for group in groups.values()]
+    assert all(speakers)
+    assert not (speakers[0] & speakers[1] or speakers[0] & speakers[2] or speakers[1] & speakers[2])
