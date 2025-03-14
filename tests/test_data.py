@@ -26,3 +26,11 @@ def test_duplicate_ids_rejected_on_write(tmp_path):
     record = records()[0]
     with pytest.raises(ValueError):
         save_manifest([record, record], tmp_path / "bad.jsonl")
+
+
+def test_duplicate_ids_rejected_on_read(tmp_path):
+    path = tmp_path / "data.jsonl"
+    save_manifest([records()[0]], path)
+    path.write_text(path.read_text() * 2)
+    with pytest.raises(ValueError, match=":2: duplicate"):
+        load_manifest(path)
