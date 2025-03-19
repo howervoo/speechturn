@@ -57,3 +57,11 @@ def test_split_is_exhaustive_and_disjoint():
     speakers = [set(record.speaker for record in group) for group in groups.values()]
     assert all(speakers)
     assert not (speakers[0] & speakers[1] or speakers[0] & speakers[2] or speakers[1] & speakers[2])
+
+
+def test_split_reproducible_and_input_order_preserved():
+    first = split_by_speaker(records(), seed=10)
+    assert first == split_by_speaker(records(), seed=10)
+    assert first != split_by_speaker(records(), seed=11)
+    for group in first.values():
+        assert group == [record for record in records() if record in group]
