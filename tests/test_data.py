@@ -65,3 +65,8 @@ def test_split_reproducible_and_input_order_preserved():
     assert first != split_by_speaker(records(), seed=11)
     for group in first.values():
         assert group == [record for record in records() if record in group]
+
+
+def test_split_requires_enough_speakers():
+    with pytest.raises(ValueError, match="not enough speakers"):
+        split_by_speaker(records()[:2])
