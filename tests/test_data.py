@@ -70,3 +70,9 @@ def test_split_reproducible_and_input_order_preserved():
 def test_split_requires_enough_speakers():
     with pytest.raises(ValueError, match="not enough speakers"):
         split_by_speaker(records()[:2])
+
+
+def test_zero_fraction_split_is_empty():
+    groups = split_by_speaker(records(), fractions=(1.0, 0.0, 0.0))
+    assert groups["train"] == records()
+    assert groups["validation"] == groups["test"] == []
