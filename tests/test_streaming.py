@@ -18,3 +18,9 @@ def test_every_small_chunk_partition_is_lossless():
         chunks.extend(chunker.flush())
         assert [len(chunk) for chunk in chunks] == [3, 3, 2]
         assert np.array_equal(np.concatenate(chunks), samples)
+
+
+def test_empty_chunker_flush():
+    chunker = AudioChunker(4)
+    assert chunker.feed(np.array([])) == []
+    assert chunker.flush() == []
