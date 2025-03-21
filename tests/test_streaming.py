@@ -34,3 +34,12 @@ def test_closed_chunker_rejects_both_operations():
         chunker.feed(np.ones(2))
     with pytest.raises(ValueError):
         chunker.flush()
+
+
+def test_input_and_output_do_not_alias_buffer():
+    samples = np.arange(5, dtype=np.float32)
+    chunker = AudioChunker(3)
+    output = chunker.feed(samples)
+    samples[:] = -1
+    output[0][:] = -2
+    assert chunker.flush()[0].tolist() == [3, 4]
