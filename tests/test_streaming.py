@@ -3,6 +3,7 @@
 import itertools
 
 import numpy as np
+import pytest
 
 from speechturn.streaming import AudioChunker
 
@@ -24,3 +25,12 @@ def test_empty_chunker_flush():
     chunker = AudioChunker(4)
     assert chunker.feed(np.array([])) == []
     assert chunker.flush() == []
+
+
+def test_closed_chunker_rejects_both_operations():
+    chunker = AudioChunker(4)
+    chunker.flush()
+    with pytest.raises(ValueError):
+        chunker.feed(np.ones(2))
+    with pytest.raises(ValueError):
+        chunker.flush()
