@@ -5,7 +5,7 @@ import itertools
 import numpy as np
 import pytest
 
-from speechturn.streaming import TRANSITIONS, AudioChunker
+from speechturn.streaming import TRANSITIONS, AudioChunker, StreamEvent, StreamSession
 
 
 def test_every_small_chunk_partition_is_lossless():
@@ -52,3 +52,28 @@ def test_transition_table_golden():
         "closed": {},
         "failed": {},
     }
+
+
+@pytest.mark.parametrize(
+    "state,kind",
+    list(
+        itertools.product(
+            ["idle", "open", "closed", "failed"], ["start", "audio", "text", "final", "error"]
+        )
+    ),
+)
+def test_exhaustive_state_transition_behavior(state, kind):
+    session = StreamSession()
+    if state != "idle":
+        session.accept(StreamEvent(0, "start", 0))
+    if state in ("closed", "failed"):
+        session.accept(StreamEvent(1, "final" if state == "closed" else "error", 1))
+    before = list(session.events)
+    event = StreamEvent(len(before), kind, 2)
+    if kind in TRANSITIONS[state]:
+        session.accept(event)
+        assert session.state == TRANSITIONS[state][kind]
+    else:
+        with pytest.raises(ValueError):
+            session.accept(event)
+        assert session.events == before and session.state == state
