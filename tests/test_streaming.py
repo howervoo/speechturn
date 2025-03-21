@@ -5,7 +5,7 @@ import itertools
 import numpy as np
 import pytest
 
-from speechturn.streaming import AudioChunker
+from speechturn.streaming import TRANSITIONS, AudioChunker
 
 
 def test_every_small_chunk_partition_is_lossless():
@@ -43,3 +43,12 @@ def test_input_and_output_do_not_alias_buffer():
     samples[:] = -1
     output[0][:] = -2
     assert chunker.flush()[0].tolist() == [3, 4]
+
+
+def test_transition_table_golden():
+    assert TRANSITIONS == {
+        "idle": {"start": "open"},
+        "open": {"audio": "open", "text": "open", "final": "closed", "error": "failed"},
+        "closed": {},
+        "failed": {},
+    }
