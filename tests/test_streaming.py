@@ -86,3 +86,16 @@ def test_event_sequence_and_clock_rejection_are_atomic():
         with pytest.raises(ValueError):
             session.accept(event)
     assert len(session.events) == 1 and session.state == "open"
+
+
+def test_latency_definitions_and_zero_duration():
+    session = StreamSession()
+    for index, (kind, time) in enumerate(
+        [("start", 10), ("audio", 10.1), ("text", 10.2), ("final", 11)]
+    ):
+        session.accept(StreamEvent(index, kind, time))
+    stats = session.statistics(2)
+    assert stats["first_text_seconds"] == pytest.approx(0.2)
+    assert stats["final_seconds"] == 1
+    assert stats["real_time_factor"] == 0.5
+    assert session.statistics(0)["real_time_factor"] is None
