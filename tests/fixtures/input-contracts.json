@@ -10,5 +10,17 @@
     "class": "SpeechConfig",
     "field": "sample_rate",
     "value": -1
+  },
+  {
+    "id": "SpeechConfig.sample_rate.null",
+    "class": "SpeechConfig",
+    "field": "sample_rate",
+    "value": null
+  },
+  {
+    "id": "SpeechConfig.sample_rate.boolean",
+    "class": "SpeechConfig",
+    "field": "sample_rate",
+    "value": true
   }
 ]
