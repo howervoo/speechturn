@@ -77,3 +77,12 @@ def test_exhaustive_state_transition_behavior(state, kind):
         with pytest.raises(ValueError):
             session.accept(event)
         assert session.events == before and session.state == state
+
+
+def test_event_sequence_and_clock_rejection_are_atomic():
+    session = StreamSession()
+    session.accept(StreamEvent(0, "start", 10))
+    for event in [StreamEvent(2, "text", 11), StreamEvent(1, "text", 9)]:
+        with pytest.raises(ValueError):
+            session.accept(event)
+    assert len(session.events) == 1 and session.state == "open"
