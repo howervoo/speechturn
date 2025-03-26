@@ -4,5 +4,11 @@
     "class": "SpeechConfig",
     "field": "sample_rate",
     "value": 0
+  },
+  {
+    "id": "SpeechConfig.sample_rate.negative",
+    "class": "SpeechConfig",
+    "field": "sample_rate",
+    "value": -1
   }
 ]
