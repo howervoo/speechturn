@@ -1,0 +1,8 @@
+[
+  {
+    "id": "SpeechConfig.sample_rate.zero",
+    "class": "SpeechConfig",
+    "field": "sample_rate",
+    "value": 0
+  }
+]
