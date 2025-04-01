@@ -34,5 +34,17 @@
     "class": "SpeechConfig",
     "field": "sample_rate",
     "value": 1.5
+  },
+  {
+    "id": "SpeechConfig.sample_rate.list",
+    "class": "SpeechConfig",
+    "field": "sample_rate",
+    "value": []
+  },
+  {
+    "id": "SpeechConfig.sample_rate.object",
+    "class": "SpeechConfig",
+    "field": "sample_rate",
+    "value": {}
   }
 ]
