@@ -28,5 +28,11 @@
     "class": "SpeechConfig",
     "field": "sample_rate",
     "value": "1"
+  },
+  {
+    "id": "SpeechConfig.sample_rate.fraction",
+    "class": "SpeechConfig",
+    "field": "sample_rate",
+    "value": 1.5
   }
 ]
