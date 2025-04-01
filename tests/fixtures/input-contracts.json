@@ -22,5 +22,11 @@
     "class": "SpeechConfig",
     "field": "sample_rate",
     "value": true
+  },
+  {
+    "id": "SpeechConfig.sample_rate.text",
+    "class": "SpeechConfig",
+    "field": "sample_rate",
+    "value": "1"
   }
 ]
