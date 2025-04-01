@@ -54,5 +54,13 @@
     "value": {
       "float": "nan"
     }
+  },
+  {
+    "id": "SpeechConfig.sample_rate.infinite",
+    "class": "SpeechConfig",
+    "field": "sample_rate",
+    "value": {
+      "float": "inf"
+    }
   }
 ]
