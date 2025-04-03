@@ -86,5 +86,17 @@
     "class": "SpeechConfig",
     "field": "n_fft",
     "value": true
+  },
+  {
+    "id": "SpeechConfig.n_fft.text",
+    "class": "SpeechConfig",
+    "field": "n_fft",
+    "value": "1"
+  },
+  {
+    "id": "SpeechConfig.n_fft.fraction",
+    "class": "SpeechConfig",
+    "field": "n_fft",
+    "value": 1.5
   }
 ]
