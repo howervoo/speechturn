@@ -62,5 +62,17 @@
     "value": {
       "float": "inf"
     }
+  },
+  {
+    "id": "SpeechConfig.n_fft.zero",
+    "class": "SpeechConfig",
+    "field": "n_fft",
+    "value": 0
+  },
+  {
+    "id": "SpeechConfig.n_fft.negative",
+    "class": "SpeechConfig",
+    "field": "n_fft",
+    "value": -1
   }
 ]
