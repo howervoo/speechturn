@@ -80,5 +80,11 @@
     "class": "SpeechConfig",
     "field": "n_fft",
     "value": null
+  },
+  {
+    "id": "SpeechConfig.n_fft.boolean",
+    "class": "SpeechConfig",
+    "field": "n_fft",
+    "value": true
   }
 ]
