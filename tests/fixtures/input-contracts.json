@@ -74,5 +74,11 @@
     "class": "SpeechConfig",
     "field": "n_fft",
     "value": -1
+  },
+  {
+    "id": "SpeechConfig.n_fft.null",
+    "class": "SpeechConfig",
+    "field": "n_fft",
+    "value": null
   }
 ]
