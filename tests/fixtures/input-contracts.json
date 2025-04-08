@@ -98,5 +98,11 @@
     "class": "SpeechConfig",
     "field": "n_fft",
     "value": 1.5
+  },
+  {
+    "id": "SpeechConfig.n_fft.list",
+    "class": "SpeechConfig",
+    "field": "n_fft",
+    "value": []
   }
 ]
