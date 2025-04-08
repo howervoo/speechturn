@@ -132,5 +132,17 @@
     "class": "SpeechConfig",
     "field": "win_length",
     "value": 0
+  },
+  {
+    "id": "SpeechConfig.win_length.negative",
+    "class": "SpeechConfig",
+    "field": "win_length",
+    "value": -1
+  },
+  {
+    "id": "SpeechConfig.win_length.null",
+    "class": "SpeechConfig",
+    "field": "win_length",
+    "value": null
   }
 ]
