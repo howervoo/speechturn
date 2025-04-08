@@ -126,5 +126,11 @@
     "value": {
       "float": "inf"
     }
+  },
+  {
+    "id": "SpeechConfig.win_length.zero",
+    "class": "SpeechConfig",
+    "field": "win_length",
+    "value": 0
   }
 ]
