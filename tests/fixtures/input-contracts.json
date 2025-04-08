@@ -118,5 +118,13 @@
     "value": {
       "float": "nan"
     }
+  },
+  {
+    "id": "SpeechConfig.n_fft.infinite",
+    "class": "SpeechConfig",
+    "field": "n_fft",
+    "value": {
+      "float": "inf"
+    }
   }
 ]
