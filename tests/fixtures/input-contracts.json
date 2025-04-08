@@ -104,5 +104,19 @@
     "class": "SpeechConfig",
     "field": "n_fft",
     "value": []
+  },
+  {
+    "id": "SpeechConfig.n_fft.object",
+    "class": "SpeechConfig",
+    "field": "n_fft",
+    "value": {}
+  },
+  {
+    "id": "SpeechConfig.n_fft.nan",
+    "class": "SpeechConfig",
+    "field": "n_fft",
+    "value": {
+      "float": "nan"
+    }
   }
 ]
