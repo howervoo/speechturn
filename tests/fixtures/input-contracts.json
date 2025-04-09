@@ -168,5 +168,11 @@
     "class": "SpeechConfig",
     "field": "win_length",
     "value": []
+  },
+  {
+    "id": "SpeechConfig.win_length.object",
+    "class": "SpeechConfig",
+    "field": "win_length",
+    "value": {}
   }
 ]
