@@ -144,5 +144,11 @@
     "class": "SpeechConfig",
     "field": "win_length",
     "value": null
+  },
+  {
+    "id": "SpeechConfig.win_length.boolean",
+    "class": "SpeechConfig",
+    "field": "win_length",
+    "value": true
   }
 ]
