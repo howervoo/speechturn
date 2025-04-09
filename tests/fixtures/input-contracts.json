@@ -156,5 +156,17 @@
     "class": "SpeechConfig",
     "field": "win_length",
     "value": "1"
+  },
+  {
+    "id": "SpeechConfig.win_length.fraction",
+    "class": "SpeechConfig",
+    "field": "win_length",
+    "value": 1.5
+  },
+  {
+    "id": "SpeechConfig.win_length.list",
+    "class": "SpeechConfig",
+    "field": "win_length",
+    "value": []
   }
 ]
