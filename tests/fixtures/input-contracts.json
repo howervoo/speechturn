@@ -202,5 +202,17 @@
     "class": "SpeechConfig",
     "field": "hop_length",
     "value": -1
+  },
+  {
+    "id": "SpeechConfig.hop_length.null",
+    "class": "SpeechConfig",
+    "field": "hop_length",
+    "value": null
+  },
+  {
+    "id": "SpeechConfig.hop_length.boolean",
+    "class": "SpeechConfig",
+    "field": "hop_length",
+    "value": true
   }
 ]
