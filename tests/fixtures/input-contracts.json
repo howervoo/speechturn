@@ -182,5 +182,19 @@
     "value": {
       "float": "nan"
     }
+  },
+  {
+    "id": "SpeechConfig.win_length.infinite",
+    "class": "SpeechConfig",
+    "field": "win_length",
+    "value": {
+      "float": "inf"
+    }
+  },
+  {
+    "id": "SpeechConfig.hop_length.zero",
+    "class": "SpeechConfig",
+    "field": "hop_length",
+    "value": 0
   }
 ]
