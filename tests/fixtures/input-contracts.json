@@ -220,5 +220,11 @@
     "class": "SpeechConfig",
     "field": "hop_length",
     "value": "1"
+  },
+  {
+    "id": "SpeechConfig.hop_length.fraction",
+    "class": "SpeechConfig",
+    "field": "hop_length",
+    "value": 1.5
   }
 ]
