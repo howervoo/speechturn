@@ -246,5 +246,13 @@
     "value": {
       "float": "nan"
     }
+  },
+  {
+    "id": "SpeechConfig.hop_length.infinite",
+    "class": "SpeechConfig",
+    "field": "hop_length",
+    "value": {
+      "float": "inf"
+    }
   }
 ]
