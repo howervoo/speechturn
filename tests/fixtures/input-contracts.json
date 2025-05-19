@@ -238,5 +238,13 @@
     "class": "SpeechConfig",
     "field": "hop_length",
     "value": {}
+  },
+  {
+    "id": "SpeechConfig.hop_length.nan",
+    "class": "SpeechConfig",
+    "field": "hop_length",
+    "value": {
+      "float": "nan"
+    }
   }
 ]
