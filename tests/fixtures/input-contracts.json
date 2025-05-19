@@ -254,5 +254,17 @@
     "value": {
       "float": "inf"
     }
+  },
+  {
+    "id": "SpeechConfig.n_mels.zero",
+    "class": "SpeechConfig",
+    "field": "n_mels",
+    "value": 0
+  },
+  {
+    "id": "SpeechConfig.n_mels.negative",
+    "class": "SpeechConfig",
+    "field": "n_mels",
+    "value": -1
   }
 ]
