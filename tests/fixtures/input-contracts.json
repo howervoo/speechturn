@@ -226,5 +226,17 @@
     "class": "SpeechConfig",
     "field": "hop_length",
     "value": 1.5
+  },
+  {
+    "id": "SpeechConfig.hop_length.list",
+    "class": "SpeechConfig",
+    "field": "hop_length",
+    "value": []
+  },
+  {
+    "id": "SpeechConfig.hop_length.object",
+    "class": "SpeechConfig",
+    "field": "hop_length",
+    "value": {}
   }
 ]
