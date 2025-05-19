@@ -266,5 +266,11 @@
     "class": "SpeechConfig",
     "field": "n_mels",
     "value": -1
+  },
+  {
+    "id": "SpeechConfig.n_mels.null",
+    "class": "SpeechConfig",
+    "field": "n_mels",
+    "value": null
   }
 ]
