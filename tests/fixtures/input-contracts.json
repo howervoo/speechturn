@@ -278,5 +278,17 @@
     "class": "SpeechConfig",
     "field": "n_mels",
     "value": true
+  },
+  {
+    "id": "SpeechConfig.n_mels.text",
+    "class": "SpeechConfig",
+    "field": "n_mels",
+    "value": "1"
+  },
+  {
+    "id": "SpeechConfig.n_mels.fraction",
+    "class": "SpeechConfig",
+    "field": "n_mels",
+    "value": 1.5
   }
 ]
