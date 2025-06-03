@@ -296,5 +296,19 @@
     "class": "SpeechConfig",
     "field": "n_mels",
     "value": []
+  },
+  {
+    "id": "SpeechConfig.n_mels.object",
+    "class": "SpeechConfig",
+    "field": "n_mels",
+    "value": {}
+  },
+  {
+    "id": "SpeechConfig.n_mels.nan",
+    "class": "SpeechConfig",
+    "field": "n_mels",
+    "value": {
+      "float": "nan"
+    }
   }
 ]
