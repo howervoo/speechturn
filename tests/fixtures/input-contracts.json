@@ -290,5 +290,11 @@
     "class": "SpeechConfig",
     "field": "n_mels",
     "value": 1.5
+  },
+  {
+    "id": "SpeechConfig.n_mels.list",
+    "class": "SpeechConfig",
+    "field": "n_mels",
+    "value": []
   }
 ]
