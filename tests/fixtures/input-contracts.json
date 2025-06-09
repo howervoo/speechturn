@@ -324,5 +324,17 @@
     "class": "SpeechConfig",
     "field": "encoder_dim",
     "value": 0
+  },
+  {
+    "id": "SpeechConfig.encoder_dim.negative",
+    "class": "SpeechConfig",
+    "field": "encoder_dim",
+    "value": -1
+  },
+  {
+    "id": "SpeechConfig.encoder_dim.null",
+    "class": "SpeechConfig",
+    "field": "encoder_dim",
+    "value": null
   }
 ]
