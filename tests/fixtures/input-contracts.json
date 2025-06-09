@@ -342,5 +342,11 @@
     "class": "SpeechConfig",
     "field": "encoder_dim",
     "value": true
+  },
+  {
+    "id": "SpeechConfig.encoder_dim.text",
+    "class": "SpeechConfig",
+    "field": "encoder_dim",
+    "value": "1"
   }
 ]
