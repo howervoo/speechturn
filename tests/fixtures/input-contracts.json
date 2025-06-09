@@ -310,5 +310,13 @@
     "value": {
       "float": "nan"
     }
+  },
+  {
+    "id": "SpeechConfig.n_mels.infinite",
+    "class": "SpeechConfig",
+    "field": "n_mels",
+    "value": {
+      "float": "inf"
+    }
   }
 ]
