@@ -318,5 +318,11 @@
     "value": {
       "float": "inf"
     }
+  },
+  {
+    "id": "SpeechConfig.encoder_dim.zero",
+    "class": "SpeechConfig",
+    "field": "encoder_dim",
+    "value": 0
   }
 ]
