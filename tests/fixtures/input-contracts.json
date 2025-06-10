@@ -366,5 +366,13 @@
     "class": "SpeechConfig",
     "field": "encoder_dim",
     "value": {}
+  },
+  {
+    "id": "SpeechConfig.encoder_dim.nan",
+    "class": "SpeechConfig",
+    "field": "encoder_dim",
+    "value": {
+      "float": "nan"
+    }
   }
 ]
