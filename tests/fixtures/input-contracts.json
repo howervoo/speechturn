@@ -388,5 +388,11 @@
     "class": "SpeechConfig",
     "field": "model_dim",
     "value": 0
+  },
+  {
+    "id": "SpeechConfig.model_dim.negative",
+    "class": "SpeechConfig",
+    "field": "model_dim",
+    "value": -1
   }
 ]
