@@ -348,5 +348,17 @@
     "class": "SpeechConfig",
     "field": "encoder_dim",
     "value": "1"
+  },
+  {
+    "id": "SpeechConfig.encoder_dim.fraction",
+    "class": "SpeechConfig",
+    "field": "encoder_dim",
+    "value": 1.5
+  },
+  {
+    "id": "SpeechConfig.encoder_dim.list",
+    "class": "SpeechConfig",
+    "field": "encoder_dim",
+    "value": []
   }
 ]
