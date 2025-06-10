@@ -374,5 +374,19 @@
     "value": {
       "float": "nan"
     }
+  },
+  {
+    "id": "SpeechConfig.encoder_dim.infinite",
+    "class": "SpeechConfig",
+    "field": "encoder_dim",
+    "value": {
+      "float": "inf"
+    }
+  },
+  {
+    "id": "SpeechConfig.model_dim.zero",
+    "class": "SpeechConfig",
+    "field": "model_dim",
+    "value": 0
   }
 ]
