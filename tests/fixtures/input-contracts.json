@@ -394,5 +394,17 @@
     "class": "SpeechConfig",
     "field": "model_dim",
     "value": -1
+  },
+  {
+    "id": "SpeechConfig.model_dim.null",
+    "class": "SpeechConfig",
+    "field": "model_dim",
+    "value": null
+  },
+  {
+    "id": "SpeechConfig.model_dim.boolean",
+    "class": "SpeechConfig",
+    "field": "model_dim",
+    "value": true
   }
 ]
