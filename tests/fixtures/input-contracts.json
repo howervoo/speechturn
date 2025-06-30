@@ -430,5 +430,13 @@
     "class": "SpeechConfig",
     "field": "model_dim",
     "value": {}
+  },
+  {
+    "id": "SpeechConfig.model_dim.nan",
+    "class": "SpeechConfig",
+    "field": "model_dim",
+    "value": {
+      "float": "nan"
+    }
   }
 ]
