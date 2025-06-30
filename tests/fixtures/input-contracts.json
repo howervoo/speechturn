@@ -412,5 +412,11 @@
     "class": "SpeechConfig",
     "field": "model_dim",
     "value": "1"
+  },
+  {
+    "id": "SpeechConfig.model_dim.fraction",
+    "class": "SpeechConfig",
+    "field": "model_dim",
+    "value": 1.5
   }
 ]
