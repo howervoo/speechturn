@@ -438,5 +438,13 @@
     "value": {
       "float": "nan"
     }
+  },
+  {
+    "id": "SpeechConfig.model_dim.infinite",
+    "class": "SpeechConfig",
+    "field": "model_dim",
+    "value": {
+      "float": "inf"
+    }
   }
 ]
