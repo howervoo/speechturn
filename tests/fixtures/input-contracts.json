@@ -446,5 +446,17 @@
     "value": {
       "float": "inf"
     }
+  },
+  {
+    "id": "SpeechConfig.num_heads.zero",
+    "class": "SpeechConfig",
+    "field": "num_heads",
+    "value": 0
+  },
+  {
+    "id": "SpeechConfig.num_heads.negative",
+    "class": "SpeechConfig",
+    "field": "num_heads",
+    "value": -1
   }
 ]
