@@ -464,5 +464,11 @@
     "class": "SpeechConfig",
     "field": "num_heads",
     "value": null
+  },
+  {
+    "id": "SpeechConfig.num_heads.boolean",
+    "class": "SpeechConfig",
+    "field": "num_heads",
+    "value": true
   }
 ]
