@@ -470,5 +470,17 @@
     "class": "SpeechConfig",
     "field": "num_heads",
     "value": true
+  },
+  {
+    "id": "SpeechConfig.num_heads.text",
+    "class": "SpeechConfig",
+    "field": "num_heads",
+    "value": "1"
+  },
+  {
+    "id": "SpeechConfig.num_heads.fraction",
+    "class": "SpeechConfig",
+    "field": "num_heads",
+    "value": 1.5
   }
 ]
