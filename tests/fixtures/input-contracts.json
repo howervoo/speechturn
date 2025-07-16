@@ -488,5 +488,19 @@
     "class": "SpeechConfig",
     "field": "num_heads",
     "value": []
+  },
+  {
+    "id": "SpeechConfig.num_heads.object",
+    "class": "SpeechConfig",
+    "field": "num_heads",
+    "value": {}
+  },
+  {
+    "id": "SpeechConfig.num_heads.nan",
+    "class": "SpeechConfig",
+    "field": "num_heads",
+    "value": {
+      "float": "nan"
+    }
   }
 ]
