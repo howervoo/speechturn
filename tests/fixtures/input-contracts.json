@@ -482,5 +482,11 @@
     "class": "SpeechConfig",
     "field": "num_heads",
     "value": 1.5
+  },
+  {
+    "id": "SpeechConfig.num_heads.list",
+    "class": "SpeechConfig",
+    "field": "num_heads",
+    "value": []
   }
 ]
