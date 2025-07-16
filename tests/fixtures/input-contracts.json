@@ -516,5 +516,17 @@
     "class": "SpeechConfig",
     "field": "encoder_layers",
     "value": 0
+  },
+  {
+    "id": "SpeechConfig.encoder_layers.negative",
+    "class": "SpeechConfig",
+    "field": "encoder_layers",
+    "value": -1
+  },
+  {
+    "id": "SpeechConfig.encoder_layers.null",
+    "class": "SpeechConfig",
+    "field": "encoder_layers",
+    "value": null
   }
 ]
