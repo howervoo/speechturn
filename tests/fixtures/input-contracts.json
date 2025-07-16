@@ -510,5 +510,11 @@
     "value": {
       "float": "inf"
     }
+  },
+  {
+    "id": "SpeechConfig.encoder_layers.zero",
+    "class": "SpeechConfig",
+    "field": "encoder_layers",
+    "value": 0
   }
 ]
