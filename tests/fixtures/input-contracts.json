@@ -502,5 +502,13 @@
     "value": {
       "float": "nan"
     }
+  },
+  {
+    "id": "SpeechConfig.num_heads.infinite",
+    "class": "SpeechConfig",
+    "field": "num_heads",
+    "value": {
+      "float": "inf"
+    }
   }
 ]
