@@ -528,5 +528,11 @@
     "class": "SpeechConfig",
     "field": "encoder_layers",
     "value": null
+  },
+  {
+    "id": "SpeechConfig.encoder_layers.boolean",
+    "class": "SpeechConfig",
+    "field": "encoder_layers",
+    "value": true
   }
 ]
