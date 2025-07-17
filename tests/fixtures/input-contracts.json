@@ -540,5 +540,17 @@
     "class": "SpeechConfig",
     "field": "encoder_layers",
     "value": "1"
+  },
+  {
+    "id": "SpeechConfig.encoder_layers.fraction",
+    "class": "SpeechConfig",
+    "field": "encoder_layers",
+    "value": 1.5
+  },
+  {
+    "id": "SpeechConfig.encoder_layers.list",
+    "class": "SpeechConfig",
+    "field": "encoder_layers",
+    "value": []
   }
 ]
