@@ -580,5 +580,11 @@
     "class": "SpeechConfig",
     "field": "decoder_layers",
     "value": 0
+  },
+  {
+    "id": "SpeechConfig.decoder_layers.negative",
+    "class": "SpeechConfig",
+    "field": "decoder_layers",
+    "value": -1
   }
 ]
