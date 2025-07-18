@@ -566,5 +566,19 @@
     "value": {
       "float": "nan"
     }
+  },
+  {
+    "id": "SpeechConfig.encoder_layers.infinite",
+    "class": "SpeechConfig",
+    "field": "encoder_layers",
+    "value": {
+      "float": "inf"
+    }
+  },
+  {
+    "id": "SpeechConfig.decoder_layers.zero",
+    "class": "SpeechConfig",
+    "field": "decoder_layers",
+    "value": 0
   }
 ]
