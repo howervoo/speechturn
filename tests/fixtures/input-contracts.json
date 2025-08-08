@@ -604,5 +604,11 @@
     "class": "SpeechConfig",
     "field": "decoder_layers",
     "value": "1"
+  },
+  {
+    "id": "SpeechConfig.decoder_layers.fraction",
+    "class": "SpeechConfig",
+    "field": "decoder_layers",
+    "value": 1.5
   }
 ]
