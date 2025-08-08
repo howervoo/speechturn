@@ -622,5 +622,13 @@
     "class": "SpeechConfig",
     "field": "decoder_layers",
     "value": {}
+  },
+  {
+    "id": "SpeechConfig.decoder_layers.nan",
+    "class": "SpeechConfig",
+    "field": "decoder_layers",
+    "value": {
+      "float": "nan"
+    }
   }
 ]
