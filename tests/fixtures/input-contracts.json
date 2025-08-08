@@ -610,5 +610,17 @@
     "class": "SpeechConfig",
     "field": "decoder_layers",
     "value": 1.5
+  },
+  {
+    "id": "SpeechConfig.decoder_layers.list",
+    "class": "SpeechConfig",
+    "field": "decoder_layers",
+    "value": []
+  },
+  {
+    "id": "SpeechConfig.decoder_layers.object",
+    "class": "SpeechConfig",
+    "field": "decoder_layers",
+    "value": {}
   }
 ]
