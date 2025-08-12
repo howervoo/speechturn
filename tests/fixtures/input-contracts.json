@@ -638,5 +638,17 @@
     "value": {
       "float": "inf"
     }
+  },
+  {
+    "id": "SpeechConfig.downsample.zero",
+    "class": "SpeechConfig",
+    "field": "downsample",
+    "value": 0
+  },
+  {
+    "id": "SpeechConfig.downsample.negative",
+    "class": "SpeechConfig",
+    "field": "downsample",
+    "value": -1
   }
 ]
