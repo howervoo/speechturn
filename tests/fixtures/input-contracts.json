@@ -702,5 +702,11 @@
     "value": {
       "float": "inf"
     }
+  },
+  {
+    "id": "SpeechConfig.vocab_size.zero",
+    "class": "SpeechConfig",
+    "field": "vocab_size",
+    "value": 0
   }
 ]
