@@ -674,5 +674,11 @@
     "class": "SpeechConfig",
     "field": "downsample",
     "value": 1.5
+  },
+  {
+    "id": "SpeechConfig.downsample.list",
+    "class": "SpeechConfig",
+    "field": "downsample",
+    "value": []
   }
 ]
