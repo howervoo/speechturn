@@ -732,5 +732,17 @@
     "class": "SpeechConfig",
     "field": "vocab_size",
     "value": "1"
+  },
+  {
+    "id": "SpeechConfig.vocab_size.fraction",
+    "class": "SpeechConfig",
+    "field": "vocab_size",
+    "value": 1.5
+  },
+  {
+    "id": "SpeechConfig.vocab_size.list",
+    "class": "SpeechConfig",
+    "field": "vocab_size",
+    "value": []
   }
 ]
