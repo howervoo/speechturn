@@ -750,5 +750,13 @@
     "class": "SpeechConfig",
     "field": "vocab_size",
     "value": {}
+  },
+  {
+    "id": "SpeechConfig.vocab_size.nan",
+    "class": "SpeechConfig",
+    "field": "vocab_size",
+    "value": {
+      "float": "nan"
+    }
   }
 ]
