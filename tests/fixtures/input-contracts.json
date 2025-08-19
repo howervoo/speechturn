@@ -726,5 +726,11 @@
     "class": "SpeechConfig",
     "field": "vocab_size",
     "value": true
+  },
+  {
+    "id": "SpeechConfig.vocab_size.text",
+    "class": "SpeechConfig",
+    "field": "vocab_size",
+    "value": "1"
   }
 ]
