@@ -772,5 +772,11 @@
     "class": "SpeechConfig",
     "field": "max_audio_tokens",
     "value": 0
+  },
+  {
+    "id": "SpeechConfig.max_audio_tokens.negative",
+    "class": "SpeechConfig",
+    "field": "max_audio_tokens",
+    "value": -1
   }
 ]
