@@ -758,5 +758,19 @@
     "value": {
       "float": "nan"
     }
+  },
+  {
+    "id": "SpeechConfig.vocab_size.infinite",
+    "class": "SpeechConfig",
+    "field": "vocab_size",
+    "value": {
+      "float": "inf"
+    }
+  },
+  {
+    "id": "SpeechConfig.max_audio_tokens.zero",
+    "class": "SpeechConfig",
+    "field": "max_audio_tokens",
+    "value": 0
   }
 ]
