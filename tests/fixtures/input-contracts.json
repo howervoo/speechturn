@@ -814,5 +814,13 @@
     "class": "SpeechConfig",
     "field": "max_audio_tokens",
     "value": {}
+  },
+  {
+    "id": "SpeechConfig.max_audio_tokens.nan",
+    "class": "SpeechConfig",
+    "field": "max_audio_tokens",
+    "value": {
+      "float": "nan"
+    }
   }
 ]
