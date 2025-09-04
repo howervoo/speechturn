@@ -802,5 +802,17 @@
     "class": "SpeechConfig",
     "field": "max_audio_tokens",
     "value": 1.5
+  },
+  {
+    "id": "SpeechConfig.max_audio_tokens.list",
+    "class": "SpeechConfig",
+    "field": "max_audio_tokens",
+    "value": []
+  },
+  {
+    "id": "SpeechConfig.max_audio_tokens.object",
+    "class": "SpeechConfig",
+    "field": "max_audio_tokens",
+    "value": {}
   }
 ]
