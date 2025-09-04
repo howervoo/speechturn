@@ -830,5 +830,17 @@
     "value": {
       "float": "inf"
     }
+  },
+  {
+    "id": "SpeechConfig.max_text_tokens.zero",
+    "class": "SpeechConfig",
+    "field": "max_text_tokens",
+    "value": 0
+  },
+  {
+    "id": "SpeechConfig.max_text_tokens.negative",
+    "class": "SpeechConfig",
+    "field": "max_text_tokens",
+    "value": -1
   }
 ]
