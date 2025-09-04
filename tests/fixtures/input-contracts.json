@@ -796,5 +796,11 @@
     "class": "SpeechConfig",
     "field": "max_audio_tokens",
     "value": "1"
+  },
+  {
+    "id": "SpeechConfig.max_audio_tokens.fraction",
+    "class": "SpeechConfig",
+    "field": "max_audio_tokens",
+    "value": 1.5
   }
 ]
