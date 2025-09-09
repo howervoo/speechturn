@@ -872,5 +872,11 @@
     "class": "SpeechConfig",
     "field": "max_text_tokens",
     "value": []
+  },
+  {
+    "id": "SpeechConfig.max_text_tokens.object",
+    "class": "SpeechConfig",
+    "field": "max_text_tokens",
+    "value": {}
   }
 ]
