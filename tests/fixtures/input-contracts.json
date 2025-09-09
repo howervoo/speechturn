@@ -854,5 +854,17 @@
     "class": "SpeechConfig",
     "field": "max_text_tokens",
     "value": true
+  },
+  {
+    "id": "SpeechConfig.max_text_tokens.text",
+    "class": "SpeechConfig",
+    "field": "max_text_tokens",
+    "value": "1"
+  },
+  {
+    "id": "SpeechConfig.max_text_tokens.fraction",
+    "class": "SpeechConfig",
+    "field": "max_text_tokens",
+    "value": 1.5
   }
 ]
