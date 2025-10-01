@@ -878,5 +878,21 @@
     "class": "SpeechConfig",
     "field": "max_text_tokens",
     "value": {}
+  },
+  {
+    "id": "SpeechConfig.max_text_tokens.nan",
+    "class": "SpeechConfig",
+    "field": "max_text_tokens",
+    "value": {
+      "float": "nan"
+    }
+  },
+  {
+    "id": "SpeechConfig.max_text_tokens.infinite",
+    "class": "SpeechConfig",
+    "field": "max_text_tokens",
+    "value": {
+      "float": "inf"
+    }
   }
 ]
