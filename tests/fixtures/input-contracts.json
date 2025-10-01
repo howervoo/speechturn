@@ -900,5 +900,17 @@
     "class": "SpeechConfig",
     "field": "dropout",
     "value": -0.1
+  },
+  {
+    "id": "SpeechConfig.dropout.one",
+    "class": "SpeechConfig",
+    "field": "dropout",
+    "value": 1
+  },
+  {
+    "id": "SpeechConfig.dropout.null",
+    "class": "SpeechConfig",
+    "field": "dropout",
+    "value": null
   }
 ]
