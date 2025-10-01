@@ -894,5 +894,11 @@
     "value": {
       "float": "inf"
     }
+  },
+  {
+    "id": "SpeechConfig.dropout.negative",
+    "class": "SpeechConfig",
+    "field": "dropout",
+    "value": -0.1
   }
 ]
