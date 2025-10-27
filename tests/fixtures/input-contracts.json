@@ -952,5 +952,17 @@
     "value": {
       "float": "inf"
     }
+  },
+  {
+    "id": "SpeechConfig.projection.unknown",
+    "class": "SpeechConfig",
+    "field": "projection",
+    "value": "cnn"
+  },
+  {
+    "id": "SpeechConfig.projection.empty",
+    "class": "SpeechConfig",
+    "field": "projection",
+    "value": ""
   }
 ]
