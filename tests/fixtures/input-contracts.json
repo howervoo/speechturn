@@ -964,5 +964,11 @@
     "class": "SpeechConfig",
     "field": "projection",
     "value": ""
+  },
+  {
+    "id": "SpeechConfig.projection.null",
+    "class": "SpeechConfig",
+    "field": "projection",
+    "value": null
   }
 ]
