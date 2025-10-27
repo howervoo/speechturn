@@ -944,5 +944,13 @@
     "value": {
       "float": "nan"
     }
+  },
+  {
+    "id": "SpeechConfig.dropout.infinite",
+    "class": "SpeechConfig",
+    "field": "dropout",
+    "value": {
+      "float": "inf"
+    }
   }
 ]
