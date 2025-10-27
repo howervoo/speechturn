@@ -936,5 +936,13 @@
     "class": "SpeechConfig",
     "field": "dropout",
     "value": {}
+  },
+  {
+    "id": "SpeechConfig.dropout.nan",
+    "class": "SpeechConfig",
+    "field": "dropout",
+    "value": {
+      "float": "nan"
+    }
   }
 ]
