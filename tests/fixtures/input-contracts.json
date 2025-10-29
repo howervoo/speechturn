@@ -976,5 +976,17 @@
     "class": "SpeechConfig",
     "field": "projection",
     "value": true
+  },
+  {
+    "id": "SpeechConfig.projection.number",
+    "class": "SpeechConfig",
+    "field": "projection",
+    "value": 1
+  },
+  {
+    "id": "SpeechConfig.projection.list",
+    "class": "SpeechConfig",
+    "field": "projection",
+    "value": []
   }
 ]
