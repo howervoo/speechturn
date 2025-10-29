@@ -988,5 +988,11 @@
     "class": "SpeechConfig",
     "field": "projection",
     "value": []
+  },
+  {
+    "id": "SpeechConfig.projection.object",
+    "class": "SpeechConfig",
+    "field": "projection",
+    "value": {}
   }
 ]
