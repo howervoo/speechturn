@@ -1006,5 +1006,11 @@
     "class": "SpeechConfig",
     "field": "freeze_encoder",
     "value": 1
+  },
+  {
+    "id": "SpeechConfig.freeze_encoder.text",
+    "class": "SpeechConfig",
+    "field": "freeze_encoder",
+    "value": "false"
   }
 ]
