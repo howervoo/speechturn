@@ -994,5 +994,17 @@
     "class": "SpeechConfig",
     "field": "projection",
     "value": {}
+  },
+  {
+    "id": "SpeechConfig.freeze_encoder.zero",
+    "class": "SpeechConfig",
+    "field": "freeze_encoder",
+    "value": 0
+  },
+  {
+    "id": "SpeechConfig.freeze_encoder.one",
+    "class": "SpeechConfig",
+    "field": "freeze_encoder",
+    "value": 1
   }
 ]
