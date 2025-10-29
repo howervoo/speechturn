@@ -970,5 +970,11 @@
     "class": "SpeechConfig",
     "field": "projection",
     "value": null
+  },
+  {
+    "id": "SpeechConfig.projection.boolean",
+    "class": "SpeechConfig",
+    "field": "projection",
+    "value": true
   }
 ]
