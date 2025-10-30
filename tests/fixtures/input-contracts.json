@@ -1012,5 +1012,11 @@
     "class": "SpeechConfig",
     "field": "freeze_encoder",
     "value": "false"
+  },
+  {
+    "id": "SpeechConfig.freeze_encoder.null",
+    "class": "SpeechConfig",
+    "field": "freeze_encoder",
+    "value": null
   }
 ]
