@@ -1066,5 +1066,17 @@
     "class": "SpeechConfig",
     "field": "freeze_decoder",
     "value": {}
+  },
+  {
+    "id": "TrainConfig.seed.negative",
+    "class": "TrainConfig",
+    "field": "seed",
+    "value": -1
+  },
+  {
+    "id": "TrainConfig.seed.null",
+    "class": "TrainConfig",
+    "field": "seed",
+    "value": null
   }
 ]
