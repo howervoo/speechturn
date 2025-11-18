@@ -1108,5 +1108,21 @@
     "class": "TrainConfig",
     "field": "seed",
     "value": {}
+  },
+  {
+    "id": "TrainConfig.seed.nan",
+    "class": "TrainConfig",
+    "field": "seed",
+    "value": {
+      "float": "nan"
+    }
+  },
+  {
+    "id": "TrainConfig.seed.infinite",
+    "class": "TrainConfig",
+    "field": "seed",
+    "value": {
+      "float": "inf"
+    }
   }
 ]
