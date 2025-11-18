@@ -1084,5 +1084,11 @@
     "class": "TrainConfig",
     "field": "seed",
     "value": true
+  },
+  {
+    "id": "TrainConfig.seed.text",
+    "class": "TrainConfig",
+    "field": "seed",
+    "value": "1"
   }
 ]
