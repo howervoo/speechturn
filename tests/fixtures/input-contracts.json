@@ -1090,5 +1090,17 @@
     "class": "TrainConfig",
     "field": "seed",
     "value": "1"
+  },
+  {
+    "id": "TrainConfig.seed.fraction",
+    "class": "TrainConfig",
+    "field": "seed",
+    "value": 1.5
+  },
+  {
+    "id": "TrainConfig.seed.list",
+    "class": "TrainConfig",
+    "field": "seed",
+    "value": []
   }
 ]
