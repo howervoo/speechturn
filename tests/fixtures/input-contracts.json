@@ -1124,5 +1124,11 @@
     "value": {
       "float": "inf"
     }
+  },
+  {
+    "id": "TrainConfig.save_every.negative",
+    "class": "TrainConfig",
+    "field": "save_every",
+    "value": -1
   }
 ]
