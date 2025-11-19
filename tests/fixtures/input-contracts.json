@@ -1136,5 +1136,17 @@
     "class": "TrainConfig",
     "field": "save_every",
     "value": null
+  },
+  {
+    "id": "TrainConfig.save_every.boolean",
+    "class": "TrainConfig",
+    "field": "save_every",
+    "value": true
+  },
+  {
+    "id": "TrainConfig.save_every.text",
+    "class": "TrainConfig",
+    "field": "save_every",
+    "value": "1"
   }
 ]
