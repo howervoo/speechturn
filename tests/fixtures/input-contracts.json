@@ -1154,5 +1154,11 @@
     "class": "TrainConfig",
     "field": "save_every",
     "value": 1.5
+  },
+  {
+    "id": "TrainConfig.save_every.list",
+    "class": "TrainConfig",
+    "field": "save_every",
+    "value": []
   }
 ]
