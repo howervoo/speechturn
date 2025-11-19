@@ -1160,5 +1160,19 @@
     "class": "TrainConfig",
     "field": "save_every",
     "value": []
+  },
+  {
+    "id": "TrainConfig.save_every.object",
+    "class": "TrainConfig",
+    "field": "save_every",
+    "value": {}
+  },
+  {
+    "id": "TrainConfig.save_every.nan",
+    "class": "TrainConfig",
+    "field": "save_every",
+    "value": {
+      "float": "nan"
+    }
   }
 ]
