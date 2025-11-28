@@ -1182,5 +1182,11 @@
     "value": {
       "float": "inf"
     }
+  },
+  {
+    "id": "TrainConfig.batch_size.zero",
+    "class": "TrainConfig",
+    "field": "batch_size",
+    "value": 0
   }
 ]
