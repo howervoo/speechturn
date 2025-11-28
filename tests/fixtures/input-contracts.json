@@ -1200,5 +1200,11 @@
     "class": "TrainConfig",
     "field": "batch_size",
     "value": null
+  },
+  {
+    "id": "TrainConfig.batch_size.boolean",
+    "class": "TrainConfig",
+    "field": "batch_size",
+    "value": true
   }
 ]
