@@ -1174,5 +1174,13 @@
     "value": {
       "float": "nan"
     }
+  },
+  {
+    "id": "TrainConfig.save_every.infinite",
+    "class": "TrainConfig",
+    "field": "save_every",
+    "value": {
+      "float": "inf"
+    }
   }
 ]
