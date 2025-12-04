@@ -1246,5 +1246,11 @@
     "value": {
       "float": "inf"
     }
+  },
+  {
+    "id": "TrainConfig.steps.zero",
+    "class": "TrainConfig",
+    "field": "steps",
+    "value": 0
   }
 ]
