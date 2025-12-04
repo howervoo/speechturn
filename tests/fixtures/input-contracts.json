@@ -1230,5 +1230,21 @@
     "class": "TrainConfig",
     "field": "batch_size",
     "value": {}
+  },
+  {
+    "id": "TrainConfig.batch_size.nan",
+    "class": "TrainConfig",
+    "field": "batch_size",
+    "value": {
+      "float": "nan"
+    }
+  },
+  {
+    "id": "TrainConfig.batch_size.infinite",
+    "class": "TrainConfig",
+    "field": "batch_size",
+    "value": {
+      "float": "inf"
+    }
   }
 ]
