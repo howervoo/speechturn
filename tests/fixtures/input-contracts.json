@@ -1224,5 +1224,11 @@
     "class": "TrainConfig",
     "field": "batch_size",
     "value": []
+  },
+  {
+    "id": "TrainConfig.batch_size.object",
+    "class": "TrainConfig",
+    "field": "batch_size",
+    "value": {}
   }
 ]
