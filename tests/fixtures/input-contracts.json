@@ -1282,5 +1282,17 @@
     "class": "TrainConfig",
     "field": "steps",
     "value": 1.5
+  },
+  {
+    "id": "TrainConfig.steps.list",
+    "class": "TrainConfig",
+    "field": "steps",
+    "value": []
+  },
+  {
+    "id": "TrainConfig.steps.object",
+    "class": "TrainConfig",
+    "field": "steps",
+    "value": {}
   }
 ]
