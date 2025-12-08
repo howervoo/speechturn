@@ -1252,5 +1252,11 @@
     "class": "TrainConfig",
     "field": "steps",
     "value": 0
+  },
+  {
+    "id": "TrainConfig.steps.negative",
+    "class": "TrainConfig",
+    "field": "steps",
+    "value": -1
   }
 ]
