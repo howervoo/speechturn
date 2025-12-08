@@ -1276,5 +1276,11 @@
     "class": "TrainConfig",
     "field": "steps",
     "value": "1"
+  },
+  {
+    "id": "TrainConfig.steps.fraction",
+    "class": "TrainConfig",
+    "field": "steps",
+    "value": 1.5
   }
 ]
