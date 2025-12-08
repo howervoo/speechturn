@@ -1258,5 +1258,17 @@
     "class": "TrainConfig",
     "field": "steps",
     "value": -1
+  },
+  {
+    "id": "TrainConfig.steps.null",
+    "class": "TrainConfig",
+    "field": "steps",
+    "value": null
+  },
+  {
+    "id": "TrainConfig.steps.boolean",
+    "class": "TrainConfig",
+    "field": "steps",
+    "value": true
   }
 ]
