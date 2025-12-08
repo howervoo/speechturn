@@ -1270,5 +1270,11 @@
     "class": "TrainConfig",
     "field": "steps",
     "value": true
+  },
+  {
+    "id": "TrainConfig.steps.text",
+    "class": "TrainConfig",
+    "field": "steps",
+    "value": "1"
   }
 ]
