@@ -1294,5 +1294,13 @@
     "class": "TrainConfig",
     "field": "steps",
     "value": {}
+  },
+  {
+    "id": "TrainConfig.steps.nan",
+    "class": "TrainConfig",
+    "field": "steps",
+    "value": {
+      "float": "nan"
+    }
   }
 ]
