@@ -1302,5 +1302,19 @@
     "value": {
       "float": "nan"
     }
+  },
+  {
+    "id": "TrainConfig.steps.infinite",
+    "class": "TrainConfig",
+    "field": "steps",
+    "value": {
+      "float": "inf"
+    }
+  },
+  {
+    "id": "TrainConfig.gradient_accumulation.zero",
+    "class": "TrainConfig",
+    "field": "gradient_accumulation",
+    "value": 0
   }
 ]
