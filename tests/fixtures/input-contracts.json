@@ -1366,5 +1366,13 @@
     "value": {
       "float": "nan"
     }
+  },
+  {
+    "id": "TrainConfig.gradient_accumulation.infinite",
+    "class": "TrainConfig",
+    "field": "gradient_accumulation",
+    "value": {
+      "float": "inf"
+    }
   }
 ]
