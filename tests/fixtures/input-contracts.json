@@ -1374,5 +1374,11 @@
     "value": {
       "float": "inf"
     }
+  },
+  {
+    "id": "TrainConfig.learning_rate.zero",
+    "class": "TrainConfig",
+    "field": "learning_rate",
+    "value": 0
   }
 ]
