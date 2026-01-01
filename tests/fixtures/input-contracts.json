@@ -1352,5 +1352,19 @@
     "class": "TrainConfig",
     "field": "gradient_accumulation",
     "value": []
+  },
+  {
+    "id": "TrainConfig.gradient_accumulation.object",
+    "class": "TrainConfig",
+    "field": "gradient_accumulation",
+    "value": {}
+  },
+  {
+    "id": "TrainConfig.gradient_accumulation.nan",
+    "class": "TrainConfig",
+    "field": "gradient_accumulation",
+    "value": {
+      "float": "nan"
+    }
   }
 ]
