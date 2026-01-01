@@ -1346,5 +1346,11 @@
     "class": "TrainConfig",
     "field": "gradient_accumulation",
     "value": 1.5
+  },
+  {
+    "id": "TrainConfig.gradient_accumulation.list",
+    "class": "TrainConfig",
+    "field": "gradient_accumulation",
+    "value": []
   }
 ]
