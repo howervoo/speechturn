@@ -1416,5 +1416,13 @@
     "class": "TrainConfig",
     "field": "learning_rate",
     "value": {}
+  },
+  {
+    "id": "TrainConfig.learning_rate.nan",
+    "class": "TrainConfig",
+    "field": "learning_rate",
+    "value": {
+      "float": "nan"
+    }
   }
 ]
