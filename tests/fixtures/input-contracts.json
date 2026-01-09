@@ -1398,5 +1398,17 @@
     "class": "TrainConfig",
     "field": "learning_rate",
     "value": true
+  },
+  {
+    "id": "TrainConfig.learning_rate.text",
+    "class": "TrainConfig",
+    "field": "learning_rate",
+    "value": "1"
+  },
+  {
+    "id": "TrainConfig.learning_rate.list",
+    "class": "TrainConfig",
+    "field": "learning_rate",
+    "value": []
   }
 ]
