@@ -1424,5 +1424,19 @@
     "value": {
       "float": "nan"
     }
+  },
+  {
+    "id": "TrainConfig.learning_rate.infinite",
+    "class": "TrainConfig",
+    "field": "learning_rate",
+    "value": {
+      "float": "inf"
+    }
+  },
+  {
+    "id": "TrainConfig.max_grad_norm.zero",
+    "class": "TrainConfig",
+    "field": "max_grad_norm",
+    "value": 0
   }
 ]
