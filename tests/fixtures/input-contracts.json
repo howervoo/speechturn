@@ -1490,5 +1490,11 @@
     "value": {
       "float": "inf"
     }
+  },
+  {
+    "id": "TrainConfig.weight_decay.negative",
+    "class": "TrainConfig",
+    "field": "weight_decay",
+    "value": -1
   }
 ]
