@@ -1468,5 +1468,11 @@
     "class": "TrainConfig",
     "field": "max_grad_norm",
     "value": []
+  },
+  {
+    "id": "TrainConfig.max_grad_norm.object",
+    "class": "TrainConfig",
+    "field": "max_grad_norm",
+    "value": {}
   }
 ]
