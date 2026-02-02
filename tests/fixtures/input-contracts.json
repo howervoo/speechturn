@@ -1474,5 +1474,21 @@
     "class": "TrainConfig",
     "field": "max_grad_norm",
     "value": {}
+  },
+  {
+    "id": "TrainConfig.max_grad_norm.nan",
+    "class": "TrainConfig",
+    "field": "max_grad_norm",
+    "value": {
+      "float": "nan"
+    }
+  },
+  {
+    "id": "TrainConfig.max_grad_norm.infinite",
+    "class": "TrainConfig",
+    "field": "max_grad_norm",
+    "value": {
+      "float": "inf"
+    }
   }
 ]
