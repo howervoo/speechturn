@@ -1496,5 +1496,17 @@
     "class": "TrainConfig",
     "field": "weight_decay",
     "value": -1
+  },
+  {
+    "id": "TrainConfig.weight_decay.null",
+    "class": "TrainConfig",
+    "field": "weight_decay",
+    "value": null
+  },
+  {
+    "id": "TrainConfig.weight_decay.boolean",
+    "class": "TrainConfig",
+    "field": "weight_decay",
+    "value": true
   }
 ]
