@@ -1520,5 +1520,19 @@
     "class": "TrainConfig",
     "field": "weight_decay",
     "value": []
+  },
+  {
+    "id": "TrainConfig.weight_decay.object",
+    "class": "TrainConfig",
+    "field": "weight_decay",
+    "value": {}
+  },
+  {
+    "id": "TrainConfig.weight_decay.nan",
+    "class": "TrainConfig",
+    "field": "weight_decay",
+    "value": {
+      "float": "nan"
+    }
   }
 ]
