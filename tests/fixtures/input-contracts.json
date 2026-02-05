@@ -1534,5 +1534,13 @@
     "value": {
       "float": "nan"
     }
+  },
+  {
+    "id": "TrainConfig.weight_decay.infinite",
+    "class": "TrainConfig",
+    "field": "weight_decay",
+    "value": {
+      "float": "inf"
+    }
   }
 ]
