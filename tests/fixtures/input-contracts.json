@@ -1514,5 +1514,11 @@
     "class": "TrainConfig",
     "field": "weight_decay",
     "value": "1"
+  },
+  {
+    "id": "TrainConfig.weight_decay.list",
+    "class": "TrainConfig",
+    "field": "weight_decay",
+    "value": []
   }
 ]
