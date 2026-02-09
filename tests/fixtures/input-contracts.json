@@ -1572,5 +1572,17 @@
     "class": "AudioExample",
     "field": "id",
     "value": 1
+  },
+  {
+    "id": "AudioExample.audio.empty",
+    "class": "AudioExample",
+    "field": "audio",
+    "value": ""
+  },
+  {
+    "id": "AudioExample.audio.blank",
+    "class": "AudioExample",
+    "field": "audio",
+    "value": " "
   }
 ]
