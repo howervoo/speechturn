@@ -1584,5 +1584,11 @@
     "class": "AudioExample",
     "field": "audio",
     "value": " "
+  },
+  {
+    "id": "AudioExample.audio.nul",
+    "class": "AudioExample",
+    "field": "audio",
+    "value": "a\u0000b"
   }
 ]
