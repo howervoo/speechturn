@@ -1608,5 +1608,11 @@
     "class": "AudioExample",
     "field": "instruction",
     "value": ""
+  },
+  {
+    "id": "AudioExample.instruction.blank",
+    "class": "AudioExample",
+    "field": "instruction",
+    "value": " "
   }
 ]
