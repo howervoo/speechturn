@@ -1590,5 +1590,11 @@
     "class": "AudioExample",
     "field": "audio",
     "value": "a\u0000b"
+  },
+  {
+    "id": "AudioExample.audio.null",
+    "class": "AudioExample",
+    "field": "audio",
+    "value": null
   }
 ]
