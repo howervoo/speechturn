@@ -1614,5 +1614,17 @@
     "class": "AudioExample",
     "field": "instruction",
     "value": " "
+  },
+  {
+    "id": "AudioExample.instruction.nul",
+    "class": "AudioExample",
+    "field": "instruction",
+    "value": "a\u0000b"
+  },
+  {
+    "id": "AudioExample.instruction.null",
+    "class": "AudioExample",
+    "field": "instruction",
+    "value": null
   }
 ]
