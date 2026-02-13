@@ -1656,5 +1656,11 @@
     "class": "AudioExample",
     "field": "speaker",
     "value": null
+  },
+  {
+    "id": "AudioExample.speaker.number",
+    "class": "AudioExample",
+    "field": "speaker",
+    "value": 1
   }
 ]
