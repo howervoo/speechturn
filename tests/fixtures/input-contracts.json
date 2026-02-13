@@ -1638,5 +1638,17 @@
     "class": "AudioExample",
     "field": "speaker",
     "value": ""
+  },
+  {
+    "id": "AudioExample.speaker.blank",
+    "class": "AudioExample",
+    "field": "speaker",
+    "value": " "
+  },
+  {
+    "id": "AudioExample.speaker.nul",
+    "class": "AudioExample",
+    "field": "speaker",
+    "value": "a\u0000b"
   }
 ]
