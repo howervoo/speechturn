@@ -1698,5 +1698,11 @@
     "class": "AudioExample",
     "field": "text",
     "value": null
+  },
+  {
+    "id": "AudioExample.text.boolean",
+    "class": "AudioExample",
+    "field": "text",
+    "value": true
   }
 ]
