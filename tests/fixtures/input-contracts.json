@@ -1674,5 +1674,11 @@
     "class": "AudioExample",
     "field": "language",
     "value": " "
+  },
+  {
+    "id": "AudioExample.language.nul",
+    "class": "AudioExample",
+    "field": "language",
+    "value": "a\u0000b"
   }
 ]
