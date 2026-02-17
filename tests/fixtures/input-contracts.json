@@ -1704,5 +1704,17 @@
     "class": "AudioExample",
     "field": "text",
     "value": true
+  },
+  {
+    "id": "AudioExample.text.number",
+    "class": "AudioExample",
+    "field": "text",
+    "value": 1
+  },
+  {
+    "id": "AudioExample.text.list",
+    "class": "AudioExample",
+    "field": "text",
+    "value": []
   }
 ]
