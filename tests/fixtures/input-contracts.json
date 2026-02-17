@@ -1686,5 +1686,17 @@
     "class": "AudioExample",
     "field": "language",
     "value": null
+  },
+  {
+    "id": "AudioExample.language.number",
+    "class": "AudioExample",
+    "field": "language",
+    "value": 1
+  },
+  {
+    "id": "AudioExample.text.null",
+    "class": "AudioExample",
+    "field": "text",
+    "value": null
   }
 ]
