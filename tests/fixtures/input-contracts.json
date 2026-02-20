@@ -1722,5 +1722,11 @@
     "class": "AudioExample",
     "field": "text",
     "value": {}
+  },
+  {
+    "id": "AudioExample.start.negative",
+    "class": "AudioExample",
+    "field": "start",
+    "value": -1
   }
 ]
