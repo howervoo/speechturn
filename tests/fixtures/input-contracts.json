@@ -1728,5 +1728,17 @@
     "class": "AudioExample",
     "field": "start",
     "value": -1
+  },
+  {
+    "id": "AudioExample.start.null",
+    "class": "AudioExample",
+    "field": "start",
+    "value": null
+  },
+  {
+    "id": "AudioExample.start.boolean",
+    "class": "AudioExample",
+    "field": "start",
+    "value": true
   }
 ]
