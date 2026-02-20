@@ -1716,5 +1716,11 @@
     "class": "AudioExample",
     "field": "text",
     "value": []
+  },
+  {
+    "id": "AudioExample.text.object",
+    "class": "AudioExample",
+    "field": "text",
+    "value": {}
   }
 ]
