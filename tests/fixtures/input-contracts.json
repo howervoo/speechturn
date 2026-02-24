@@ -1752,5 +1752,19 @@
     "class": "AudioExample",
     "field": "start",
     "value": []
+  },
+  {
+    "id": "AudioExample.start.object",
+    "class": "AudioExample",
+    "field": "start",
+    "value": {}
+  },
+  {
+    "id": "AudioExample.start.nan",
+    "class": "AudioExample",
+    "field": "start",
+    "value": {
+      "float": "nan"
+    }
   }
 ]
