@@ -1792,5 +1792,11 @@
     "class": "AudioExample",
     "field": "duration",
     "value": true
+  },
+  {
+    "id": "AudioExample.duration.text",
+    "class": "AudioExample",
+    "field": "duration",
+    "value": "1"
   }
 ]
