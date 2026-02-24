@@ -1774,5 +1774,11 @@
     "value": {
       "float": "inf"
     }
+  },
+  {
+    "id": "AudioExample.duration.zero",
+    "class": "AudioExample",
+    "field": "duration",
+    "value": 0
   }
 ]
