@@ -1780,5 +1780,17 @@
     "class": "AudioExample",
     "field": "duration",
     "value": 0
+  },
+  {
+    "id": "AudioExample.duration.negative",
+    "class": "AudioExample",
+    "field": "duration",
+    "value": -1
+  },
+  {
+    "id": "AudioExample.duration.boolean",
+    "class": "AudioExample",
+    "field": "duration",
+    "value": true
   }
 ]
