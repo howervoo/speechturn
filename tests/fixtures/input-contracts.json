@@ -1818,5 +1818,13 @@
     "value": {
       "float": "nan"
     }
+  },
+  {
+    "id": "AudioExample.duration.infinite",
+    "class": "AudioExample",
+    "field": "duration",
+    "value": {
+      "float": "inf"
+    }
   }
 ]
