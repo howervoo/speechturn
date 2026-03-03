@@ -1838,5 +1838,11 @@
     "class": "StreamEvent",
     "field": "sequence",
     "value": null
+  },
+  {
+    "id": "StreamEvent.sequence.boolean",
+    "class": "StreamEvent",
+    "field": "sequence",
+    "value": true
   }
 ]
