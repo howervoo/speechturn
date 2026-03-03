@@ -1826,5 +1826,17 @@
     "value": {
       "float": "inf"
     }
+  },
+  {
+    "id": "StreamEvent.sequence.negative",
+    "class": "StreamEvent",
+    "field": "sequence",
+    "value": -1
+  },
+  {
+    "id": "StreamEvent.sequence.null",
+    "class": "StreamEvent",
+    "field": "sequence",
+    "value": null
   }
 ]
