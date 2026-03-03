@@ -1810,5 +1810,13 @@
     "class": "AudioExample",
     "field": "duration",
     "value": {}
+  },
+  {
+    "id": "AudioExample.duration.nan",
+    "class": "AudioExample",
+    "field": "duration",
+    "value": {
+      "float": "nan"
+    }
   }
 ]
