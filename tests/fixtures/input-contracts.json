@@ -1850,5 +1850,17 @@
     "class": "StreamEvent",
     "field": "sequence",
     "value": "1"
+  },
+  {
+    "id": "StreamEvent.sequence.fraction",
+    "class": "StreamEvent",
+    "field": "sequence",
+    "value": 1.5
+  },
+  {
+    "id": "StreamEvent.sequence.list",
+    "class": "StreamEvent",
+    "field": "sequence",
+    "value": []
   }
 ]
