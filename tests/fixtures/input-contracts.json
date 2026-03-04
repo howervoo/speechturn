@@ -1876,5 +1876,19 @@
     "value": {
       "float": "nan"
     }
+  },
+  {
+    "id": "StreamEvent.sequence.infinite",
+    "class": "StreamEvent",
+    "field": "sequence",
+    "value": {
+      "float": "inf"
+    }
+  },
+  {
+    "id": "StreamEvent.timestamp.negative",
+    "class": "StreamEvent",
+    "field": "timestamp",
+    "value": -1
   }
 ]
