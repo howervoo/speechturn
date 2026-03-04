@@ -1868,5 +1868,13 @@
     "class": "StreamEvent",
     "field": "sequence",
     "value": {}
+  },
+  {
+    "id": "StreamEvent.sequence.nan",
+    "class": "StreamEvent",
+    "field": "sequence",
+    "value": {
+      "float": "nan"
+    }
   }
 ]
