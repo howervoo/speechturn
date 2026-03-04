@@ -1862,5 +1862,11 @@
     "class": "StreamEvent",
     "field": "sequence",
     "value": []
+  },
+  {
+    "id": "StreamEvent.sequence.object",
+    "class": "StreamEvent",
+    "field": "sequence",
+    "value": {}
   }
 ]
