@@ -1844,5 +1844,11 @@
     "class": "StreamEvent",
     "field": "sequence",
     "value": true
+  },
+  {
+    "id": "StreamEvent.sequence.text",
+    "class": "StreamEvent",
+    "field": "sequence",
+    "value": "1"
   }
 ]
