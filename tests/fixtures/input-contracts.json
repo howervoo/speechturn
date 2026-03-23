@@ -1896,5 +1896,17 @@
     "class": "StreamEvent",
     "field": "timestamp",
     "value": null
+  },
+  {
+    "id": "StreamEvent.timestamp.boolean",
+    "class": "StreamEvent",
+    "field": "timestamp",
+    "value": true
+  },
+  {
+    "id": "StreamEvent.timestamp.text",
+    "class": "StreamEvent",
+    "field": "timestamp",
+    "value": "1"
   }
 ]
