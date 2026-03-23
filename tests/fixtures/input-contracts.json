@@ -1890,5 +1890,11 @@
     "class": "StreamEvent",
     "field": "timestamp",
     "value": -1
+  },
+  {
+    "id": "StreamEvent.timestamp.null",
+    "class": "StreamEvent",
+    "field": "timestamp",
+    "value": null
   }
 ]
