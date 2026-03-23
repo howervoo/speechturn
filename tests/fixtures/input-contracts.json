@@ -1908,5 +1908,11 @@
     "class": "StreamEvent",
     "field": "timestamp",
     "value": "1"
+  },
+  {
+    "id": "StreamEvent.timestamp.list",
+    "class": "StreamEvent",
+    "field": "timestamp",
+    "value": []
   }
 ]
