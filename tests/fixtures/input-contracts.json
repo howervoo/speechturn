@@ -1920,5 +1920,21 @@
     "class": "StreamEvent",
     "field": "timestamp",
     "value": {}
+  },
+  {
+    "id": "StreamEvent.timestamp.nan",
+    "class": "StreamEvent",
+    "field": "timestamp",
+    "value": {
+      "float": "nan"
+    }
+  },
+  {
+    "id": "StreamEvent.timestamp.infinite",
+    "class": "StreamEvent",
+    "field": "timestamp",
+    "value": {
+      "float": "inf"
+    }
   }
 ]
