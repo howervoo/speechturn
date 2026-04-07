@@ -1942,5 +1942,11 @@
     "class": "StreamEvent",
     "field": "kind",
     "value": "stop"
+  },
+  {
+    "id": "StreamEvent.kind.empty",
+    "class": "StreamEvent",
+    "field": "kind",
+    "value": ""
   }
 ]
