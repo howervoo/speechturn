@@ -1936,5 +1936,11 @@
     "value": {
       "float": "inf"
     }
+  },
+  {
+    "id": "StreamEvent.kind.unknown",
+    "class": "StreamEvent",
+    "field": "kind",
+    "value": "stop"
   }
 ]
