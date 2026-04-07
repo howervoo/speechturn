@@ -1948,5 +1948,17 @@
     "class": "StreamEvent",
     "field": "kind",
     "value": ""
+  },
+  {
+    "id": "StreamEvent.kind.null",
+    "class": "StreamEvent",
+    "field": "kind",
+    "value": null
+  },
+  {
+    "id": "StreamEvent.kind.number",
+    "class": "StreamEvent",
+    "field": "kind",
+    "value": 1
   }
 ]
