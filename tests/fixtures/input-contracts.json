@@ -1990,5 +1990,17 @@
     "class": "StreamEvent",
     "field": "payload",
     "value": 1
+  },
+  {
+    "id": "StreamEvent.payload.list",
+    "class": "StreamEvent",
+    "field": "payload",
+    "value": []
+  },
+  {
+    "id": "StreamEvent.payload.object",
+    "class": "StreamEvent",
+    "field": "payload",
+    "value": {}
   }
 ]
