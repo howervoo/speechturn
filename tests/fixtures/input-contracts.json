@@ -1972,5 +1972,17 @@
     "class": "StreamEvent",
     "field": "kind",
     "value": {}
+  },
+  {
+    "id": "StreamEvent.payload.null",
+    "class": "StreamEvent",
+    "field": "payload",
+    "value": null
+  },
+  {
+    "id": "StreamEvent.payload.boolean",
+    "class": "StreamEvent",
+    "field": "payload",
+    "value": true
   }
 ]
