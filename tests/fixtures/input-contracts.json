@@ -1984,5 +1984,11 @@
     "class": "StreamEvent",
     "field": "payload",
     "value": true
+  },
+  {
+    "id": "StreamEvent.payload.number",
+    "class": "StreamEvent",
+    "field": "payload",
+    "value": 1
   }
 ]
