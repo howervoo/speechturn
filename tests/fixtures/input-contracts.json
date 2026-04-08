@@ -1966,5 +1966,11 @@
     "class": "StreamEvent",
     "field": "kind",
     "value": []
+  },
+  {
+    "id": "StreamEvent.kind.object",
+    "class": "StreamEvent",
+    "field": "kind",
+    "value": {}
   }
 ]
