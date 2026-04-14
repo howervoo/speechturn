@@ -15,3 +15,12 @@ def test_full_byte_vocabulary():
     tokenizer = ByteTokenizer()
     for code in range(128):
         assert tokenizer.encode(chr(code)) == [code + 4]
+
+
+def test_prompt_labels_are_masked():
+    tokenizer = ByteTokenizer()
+    inputs, labels = tokenizer.training_pair("Q", "yes")
+    prefix = tokenizer.prompt("Q")
+    assert inputs[: len(prefix)] == prefix
+    assert labels[: len(prefix) - 1] == [-100] * (len(prefix) - 1)
+    assert labels[len(prefix) - 1 :] == tokenizer.encode("yes") + [2]
