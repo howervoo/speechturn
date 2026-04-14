@@ -29,3 +29,9 @@ def test_prompt_labels_are_masked():
 def test_empty_answer_still_supervises_eos():
     _, labels = ByteTokenizer().training_pair("listen", "")
     assert [label for label in labels if label != -100] == [2]
+
+
+@pytest.mark.parametrize("token", [-1, 260, True, 1.2, "5"])
+def test_invalid_token_ids(token):
+    with pytest.raises(ValueError):
+        ByteTokenizer().decode([token])
