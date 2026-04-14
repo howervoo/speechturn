@@ -24,3 +24,8 @@ def test_prompt_labels_are_masked():
     assert inputs[: len(prefix)] == prefix
     assert labels[: len(prefix) - 1] == [-100] * (len(prefix) - 1)
     assert labels[len(prefix) - 1 :] == tokenizer.encode("yes") + [2]
+
+
+def test_empty_answer_still_supervises_eos():
+    _, labels = ByteTokenizer().training_pair("listen", "")
+    assert [label for label in labels if label != -100] == [2]
