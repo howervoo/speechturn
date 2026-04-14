@@ -9,3 +9,9 @@ from speechturn.tokenizer import ByteTokenizer
 def test_utf8_round_trip(text):
     tokenizer = ByteTokenizer()
     assert tokenizer.decode(tokenizer.encode(text)) == text
+
+
+def test_full_byte_vocabulary():
+    tokenizer = ByteTokenizer()
+    for code in range(128):
+        assert tokenizer.encode(chr(code)) == [code + 4]
