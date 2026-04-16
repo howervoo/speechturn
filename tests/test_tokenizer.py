@@ -35,3 +35,10 @@ def test_empty_answer_still_supervises_eos():
 def test_invalid_token_ids(token):
     with pytest.raises(ValueError):
         ByteTokenizer().decode([token])
+
+
+def test_incomplete_utf8_policy():
+    tokenizer = ByteTokenizer()
+    with pytest.raises(UnicodeDecodeError):
+        tokenizer.decode([228 + 4])
+    assert tokenizer.decode([228 + 4], errors="replace") == "�"
