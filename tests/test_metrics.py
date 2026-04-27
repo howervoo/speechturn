@@ -61,3 +61,15 @@ def test_exhaustive_small_edit_distances():
         counts = edit_counts(a, b)
         assert counts.errors == distance(a, b)
         assert len(a) - counts.deletions + counts.insertions == len(b)
+
+
+def test_metric_serialization_complete():
+    assert word_error_rate("a", "b").to_dict() == {
+        "substitutions": 1,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 1,
+        "hypothesis_length": 1,
+        "errors": 1,
+        "rate": 1.0,
+    }
