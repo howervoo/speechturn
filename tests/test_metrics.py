@@ -1,6 +1,11 @@
 """Independent edit-distance examples and whole-corpus weighting."""
 
-from speechturn.metrics import character_error_rate, normalize_text, word_error_rate
+from speechturn.metrics import (
+    aggregate_counts,
+    character_error_rate,
+    normalize_text,
+    word_error_rate,
+)
 
 
 def test_substitution_deletion_insertion_counts():
@@ -22,3 +27,8 @@ def test_chinese_character_error():
 def test_normalization_is_explicit():
     assert normalize_text("Ａ， B!", lowercase=True, remove_punctuation=True) == "a b"
     assert word_error_rate("A", "a").rate == 1
+
+
+def test_corpus_rate_weights_reference_lengths():
+    score = aggregate_counts([word_error_rate("a b c", "a b c"), word_error_rate("x", "z")])
+    assert score.rate == 0.25
