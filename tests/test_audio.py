@@ -5,6 +5,7 @@ import pytest
 import soundfile as sf
 
 from speechturn.audio import (
+    log_mel,
     read_audio,
     resample_audio,
     validate_waveform,
@@ -39,3 +40,10 @@ def test_stereo_mix_and_target_rate(tmp_path):
     result = read_audio(path, 16000)
     assert result.shape == (160,)
     assert np.all(result == 0)
+
+
+def test_silence_features_are_finite():
+    features = log_mel(np.zeros(10))
+    assert features.shape == (1, 40)
+    assert np.isfinite(features).all()
+    assert np.allclose(features, np.log(1e-10))
