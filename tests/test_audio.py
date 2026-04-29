@@ -22,3 +22,10 @@ def test_resampling_length_and_identity():
     copy = resample_audio(values, 8000, 8000)
     assert np.array_equal(values, copy)
     assert not np.shares_memory(values, copy)
+
+
+def test_downsampling_suppresses_out_of_band_tones():
+    time = np.arange(16000) / 16000
+    signal = np.sin(2 * np.pi * 6000 * time)
+    result = resample_audio(signal, 16000, 8000)
+    assert np.sqrt(np.mean(result[100:-100] ** 2)) < 0.01
