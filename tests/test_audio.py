@@ -5,6 +5,7 @@ import pytest
 import soundfile as sf
 
 from speechturn.audio import (
+    crop_audio,
     log_mel,
     mel_filterbank,
     read_audio,
@@ -57,3 +58,11 @@ def test_mel_frequency_locality():
     assert bank.shape == (40, 201)
     assert np.all(bank >= 0)
     assert np.all(np.diff(bank.argmax(axis=1)) >= 0)
+
+
+def test_crop_does_not_modify_original():
+    values = np.arange(100, dtype=np.float32)
+    output = crop_audio(values, 10, start=2, duration=3)
+    assert np.array_equal(output, np.arange(20, 50))
+    output[:] = 0
+    assert values[20] == 20
