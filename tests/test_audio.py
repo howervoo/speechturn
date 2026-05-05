@@ -6,10 +6,12 @@ import soundfile as sf
 
 from speechturn.audio import (
     log_mel,
+    mel_filterbank,
     read_audio,
     resample_audio,
     validate_waveform,
 )
+from speechturn.config import SpeechConfig
 
 
 @pytest.mark.parametrize("samples", [[], [[1]], [float("nan")], [float("inf")], [1j], ["1"]])
@@ -47,3 +49,11 @@ def test_silence_features_are_finite():
     assert features.shape == (1, 40)
     assert np.isfinite(features).all()
     assert np.allclose(features, np.log(1e-10))
+
+
+def test_mel_frequency_locality():
+    settings = SpeechConfig()
+    bank = mel_filterbank(settings)
+    assert bank.shape == (40, 201)
+    assert np.all(bank >= 0)
+    assert np.all(np.diff(bank.argmax(axis=1)) >= 0)
