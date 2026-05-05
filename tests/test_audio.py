@@ -66,3 +66,11 @@ def test_crop_does_not_modify_original():
     assert np.array_equal(output, np.arange(20, 50))
     output[:] = 0
     assert values[20] == 20
+
+
+@pytest.mark.parametrize(
+    "start,duration", [(-1, None), (10, None), (0, 0), (0, -1), (float("nan"), None)]
+)
+def test_invalid_crop_ranges(start, duration):
+    with pytest.raises(ValueError):
+        crop_audio(np.ones(100), 10, start, duration)
