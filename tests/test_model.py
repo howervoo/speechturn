@@ -36,3 +36,10 @@ def test_batch_masks_and_shifted_labels():
     assert value.input_ids.dtype == value.labels.dtype == torch.long
     assert torch.equal(value.attention_mask, value.input_ids.ne(0))
     assert torch.all(value.labels[~value.attention_mask] == -100)
+
+
+def test_batch_device_copy_keeps_identifiers():
+    value = batch()
+    copy = value.to("cpu")
+    assert copy.ids == value.ids
+    assert copy.ids is not value.ids
