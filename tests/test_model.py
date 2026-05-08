@@ -1,0 +1,38 @@
+"""Model causality, padding, gradients, generation and loss contracts."""
+
+import numpy as np
+import torch
+
+from speechturn.batching import PreparedExample, collate_examples
+from speechturn.config import SpeechConfig
+
+
+def config(**values):
+    return SpeechConfig(
+        n_mels=8,
+        encoder_dim=8,
+        model_dim=8,
+        num_heads=2,
+        max_audio_tokens=32,
+        max_text_tokens=32,
+        **values,
+    )
+
+
+def batch():
+    return collate_examples(
+        [
+            PreparedExample("short", np.ones((5, 8), dtype=np.float32), "Q", "a"),
+            PreparedExample("long", np.full((9, 8), 0.2, dtype=np.float32), "QQ", "bb"),
+        ],
+        config(),
+    )
+
+
+def test_batch_masks_and_shifted_labels():
+    value = batch()
+    assert value.features.shape == (2, 9, 8)
+    assert value.feature_lengths.tolist() == [5, 9]
+    assert value.input_ids.dtype == value.labels.dtype == torch.long
+    assert torch.equal(value.attention_mask, value.input_ids.ne(0))
+    assert torch.all(value.labels[~value.attention_mask] == -100)
