@@ -5,6 +5,7 @@ import torch
 
 from speechturn.batching import PreparedExample, collate_examples
 from speechturn.config import SpeechConfig
+from speechturn.model import AcousticEncoder
 
 
 def config(**values):
@@ -43,3 +44,11 @@ def test_batch_device_copy_keeps_identifiers():
     copy = value.to("cpu")
     assert copy.ids == value.ids
     assert copy.ids is not value.ids
+
+
+def test_encoder_downsample_lengths():
+    value = batch()
+    encoded, valid = AcousticEncoder(config())(value.features, value.feature_lengths)
+    assert valid.sum(dim=1).tolist() == [3, 5]
+    assert encoded.shape == (2, 5, 8)
+    assert torch.all(encoded[~valid] == 0)
