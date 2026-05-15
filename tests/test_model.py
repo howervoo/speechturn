@@ -70,3 +70,14 @@ def test_future_text_cannot_change_past_predictions():
         before = model(value.features, value.feature_lengths, value.input_ids)
         after = model(value.features, value.feature_lengths, changed)
     assert torch.allclose(before[:, :-1], after[:, :-1], atol=1e-06)
+
+
+def test_audio_padding_cannot_change_predictions():
+    model = SpeechLanguageModel(config()).eval()
+    value = batch()
+    changed = value.features.clone()
+    changed[0, 5:] = 1000
+    with torch.no_grad():
+        before = model(value.features, value.feature_lengths, value.input_ids)
+        after = model(changed, value.feature_lengths, value.input_ids)
+    assert torch.equal(before, after)
