@@ -58,3 +58,15 @@ def test_model_output_shape():
     value = batch()
     logits = SpeechLanguageModel(config())(value.features, value.feature_lengths, value.input_ids)
     assert logits.shape == (*value.input_ids.shape, 260)
+
+
+def test_future_text_cannot_change_past_predictions():
+    torch.manual_seed(4)
+    model = SpeechLanguageModel(config()).eval()
+    value = batch()
+    changed = value.input_ids.clone()
+    changed[:, -1] = 100
+    with torch.no_grad():
+        before = model(value.features, value.feature_lengths, value.input_ids)
+        after = model(value.features, value.feature_lengths, changed)
+    assert torch.allclose(before[:, :-1], after[:, :-1], atol=1e-06)
