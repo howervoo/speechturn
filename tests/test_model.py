@@ -81,3 +81,12 @@ def test_audio_padding_cannot_change_predictions():
         before = model(value.features, value.feature_lengths, value.input_ids)
         after = model(changed, value.feature_lengths, value.input_ids)
     assert torch.equal(before, after)
+
+
+def test_single_example_matches_padded_batch():
+    model = SpeechLanguageModel(config()).eval()
+    value = batch()
+    with torch.no_grad():
+        full = model(value.features, value.feature_lengths, value.input_ids)
+        single = model(value.features[:1, :5], value.feature_lengths[:1], value.input_ids[:1, :4])
+    assert torch.allclose(full[:1, :4], single, atol=2e-06)
