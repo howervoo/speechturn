@@ -5,7 +5,7 @@ import torch
 
 from speechturn.batching import PreparedExample, collate_examples
 from speechturn.config import SpeechConfig
-from speechturn.model import AcousticEncoder
+from speechturn.model import AcousticEncoder, SpeechLanguageModel
 
 
 def config(**values):
@@ -52,3 +52,9 @@ def test_encoder_downsample_lengths():
     assert valid.sum(dim=1).tolist() == [3, 5]
     assert encoded.shape == (2, 5, 8)
     assert torch.all(encoded[~valid] == 0)
+
+
+def test_model_output_shape():
+    value = batch()
+    logits = SpeechLanguageModel(config())(value.features, value.feature_lengths, value.input_ids)
+    assert logits.shape == (*value.input_ids.shape, 260)
