@@ -121,3 +121,8 @@ def test_loss_excludes_masked_labels():
     loss.backward()
     assert loss.item() == pytest.approx(np.log(3))
     assert torch.all(logits.grad[0, 1] == 0)
+
+
+def test_all_masked_loss_is_rejected():
+    with pytest.raises(ValueError):
+        causal_loss(torch.zeros(1, 2, 3), torch.full((1, 2), -100))
