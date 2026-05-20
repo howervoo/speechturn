@@ -1,6 +1,7 @@
 """Model causality, padding, gradients, generation and loss contracts."""
 
 import numpy as np
+import pytest
 import torch
 
 from speechturn.batching import PreparedExample, collate_examples
@@ -104,3 +105,11 @@ def test_projector_receives_gradient_with_frozen_backbones():
         parameter.grad is not None and parameter.grad.abs().sum() > 0
         for parameter in model.projector.parameters()
     )
+
+
+@pytest.mark.parametrize("projection", ["linear", "mlp"])
+def test_both_projection_paths(projection):
+    value = batch()
+    model = SpeechLanguageModel(config(projection=projection))
+    loss = causal_loss(model(value.features, value.feature_lengths, value.input_ids), value.labels)
+    assert torch.isfinite(loss)
