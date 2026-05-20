@@ -126,3 +126,13 @@ def test_loss_excludes_masked_labels():
 def test_all_masked_loss_is_rejected():
     with pytest.raises(ValueError):
         causal_loss(torch.zeros(1, 2, 3), torch.full((1, 2), -100))
+
+
+def test_greedy_generation_reproducible_and_restores_mode():
+    model = SpeechLanguageModel(config())
+    value = batch()
+    first = model.generate(value.features, value.feature_lengths, max_new_tokens=3)
+    assert model.training
+    second = model.generate(value.features, value.feature_lengths, max_new_tokens=3)
+    assert torch.equal(first, second)
+    assert not torch.any((first == 1) | (first == 3))
