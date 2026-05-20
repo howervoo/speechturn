@@ -113,3 +113,11 @@ def test_both_projection_paths(projection):
     model = SpeechLanguageModel(config(projection=projection))
     loss = causal_loss(model(value.features, value.feature_lengths, value.input_ids), value.labels)
     assert torch.isfinite(loss)
+
+
+def test_loss_excludes_masked_labels():
+    logits = torch.zeros(1, 2, 3, requires_grad=True)
+    loss = causal_loss(logits, torch.tensor([[1, -100]]))
+    loss.backward()
+    assert loss.item() == pytest.approx(np.log(3))
+    assert torch.all(logits.grad[0, 1] == 0)
