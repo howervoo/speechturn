@@ -5,7 +5,7 @@ import torch
 
 from speechturn.batching import PreparedExample, collate_examples
 from speechturn.config import SpeechConfig
-from speechturn.model import AcousticEncoder, SpeechLanguageModel
+from speechturn.model import AcousticEncoder, SpeechLanguageModel, causal_loss
 
 
 def config(**values):
@@ -90,3 +90,17 @@ def test_single_example_matches_padded_batch():
         full = model(value.features, value.feature_lengths, value.input_ids)
         single = model(value.features[:1, :5], value.feature_lengths[:1], value.input_ids[:1, :4])
     assert torch.allclose(full[:1, :4], single, atol=2e-06)
+
+
+def test_projector_receives_gradient_with_frozen_backbones():
+    model = SpeechLanguageModel(config(freeze_encoder=True, freeze_decoder=True))
+    value = batch()
+    causal_loss(
+        model(value.features, value.feature_lengths, value.input_ids), value.labels
+    ).backward()
+    assert all(parameter.grad is None for parameter in model.encoder.parameters())
+    assert all(parameter.grad is None for parameter in model.decoder.parameters())
+    assert any(
+        parameter.grad is not None and parameter.grad.abs().sum() > 0
+        for parameter in model.projector.parameters()
+    )
