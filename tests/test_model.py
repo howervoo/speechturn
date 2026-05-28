@@ -152,3 +152,12 @@ def test_eos_stops_all_rows():
         [2],
         [2],
     ]
+
+
+@pytest.mark.parametrize(
+    "lengths", [torch.tensor([0, 9]), torch.tensor([5, 10]), torch.tensor([5.0, 9.0])]
+)
+def test_invalid_feature_lengths(lengths):
+    value = batch()
+    with pytest.raises(ValueError):
+        AcousticEncoder(config())(value.features, lengths)
