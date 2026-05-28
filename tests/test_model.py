@@ -136,3 +136,19 @@ def test_greedy_generation_reproducible_and_restores_mode():
     second = model.generate(value.features, value.feature_lengths, max_new_tokens=3)
     assert torch.equal(first, second)
     assert not torch.any((first == 1) | (first == 3))
+
+
+def test_eos_stops_all_rows():
+    model = SpeechLanguageModel(config())
+    value = batch()
+
+    def force_eos(features, lengths, tokens, attention_mask=None):
+        output = torch.zeros(tokens.shape[0], tokens.shape[1], 260)
+        output[:, :, 2] = 10
+        return output
+
+    model.forward = force_eos
+    assert model.generate(value.features, value.feature_lengths, max_new_tokens=3).tolist() == [
+        [2],
+        [2],
+    ]
