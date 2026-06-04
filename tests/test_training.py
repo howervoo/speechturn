@@ -4,7 +4,9 @@ import numpy as np
 import torch
 
 from speechturn.batching import PreparedExample
+from speechturn.checkpoint import load_checkpoint, save_checkpoint
 from speechturn.config import SpeechConfig, TrainConfig
+from speechturn.model import SpeechLanguageModel
 from speechturn.training import train
 
 
@@ -47,5 +49,20 @@ def test_resume_matches_uninterrupted_training(tmp_path):
         (
             torch.equal(value, resumed.model.state_dict()[name])
             for name, value in full.model.state_dict().items()
+        )
+    )
+
+
+def test_checkpoint_preserves_all_model_tensors(tmp_path):
+    model = SpeechLanguageModel(settings())
+    path = tmp_path / "state.pt"
+    save_checkpoint(path, model, step=3)
+    restored, optimizer, step = load_checkpoint(path)
+    assert optimizer is None and step == 3
+    assert restored.config == model.config
+    assert all(
+        (
+            torch.equal(value, restored.state_dict()[name])
+            for name, value in model.state_dict().items()
         )
     )
