@@ -1,6 +1,7 @@
 """Real gradient steps and exact interrupted CPU training recovery."""
 
 import numpy as np
+import torch
 
 from speechturn.batching import PreparedExample
 from speechturn.config import SpeechConfig, TrainConfig
@@ -26,3 +27,25 @@ def test_training_reduces_synthetic_loss(tmp_path):
     )
     assert result.step == 8
     assert result.losses[-1] < result.losses[0]
+
+
+def test_resume_matches_uninterrupted_training(tmp_path):
+    cfg = settings()
+    full = train(
+        examples(), tmp_path / "full.pt", cfg, TrainConfig(steps=4, gradient_accumulation=2)
+    )
+    train(examples(), tmp_path / "part.pt", cfg, TrainConfig(steps=2, gradient_accumulation=2))
+    resumed = train(
+        examples(),
+        tmp_path / "resume.pt",
+        cfg,
+        TrainConfig(steps=4, gradient_accumulation=2),
+        tmp_path / "part.pt",
+    )
+    assert full.losses[2:] == resumed.losses
+    assert all(
+        (
+            torch.equal(value, resumed.model.state_dict()[name])
+            for name, value in full.model.state_dict().items()
+        )
+    )
