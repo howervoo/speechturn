@@ -4,7 +4,7 @@ import numpy as np
 import torch
 
 from speechturn.batching import PreparedExample
-from speechturn.checkpoint import load_checkpoint, save_checkpoint
+from speechturn.checkpoint import CHECKPOINT_FORMAT, load_checkpoint, save_checkpoint
 from speechturn.config import SpeechConfig, TrainConfig
 from speechturn.model import SpeechLanguageModel
 from speechturn.training import train
@@ -66,3 +66,12 @@ def test_checkpoint_preserves_all_model_tensors(tmp_path):
             for name, value in model.state_dict().items()
         )
     )
+
+
+def test_checkpoint_schema_is_exhaustive(tmp_path):
+    path = tmp_path / "state.pt"
+    save_checkpoint(path, SpeechLanguageModel(settings()))
+    payload = torch.load(path, weights_only=True)
+    assert set(payload) == {"format", "config", "model", "optimizer", "step", "rng"}
+    assert payload["format"] == CHECKPOINT_FORMAT
+    assert set(payload["rng"]) == {"python", "numpy", "torch"}
