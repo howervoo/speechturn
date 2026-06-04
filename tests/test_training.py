@@ -3,6 +3,7 @@
 import random
 
 import numpy as np
+import pytest
 import torch
 
 from speechturn.batching import PreparedExample
@@ -93,3 +94,13 @@ def test_checkpoint_restores_three_rngs(tmp_path):
     actual = (random.random(), np.random.random(), torch.rand(2))
     assert expected[:2] == actual[:2]
     assert torch.equal(expected[2], actual[2])
+
+
+def test_checkpoint_rejects_unknown_version(tmp_path):
+    path = tmp_path / "bad.pt"
+    save_checkpoint(path, SpeechLanguageModel(settings()))
+    payload = torch.load(path, weights_only=True)
+    payload["format"] = "future"
+    torch.save(payload, path)
+    with pytest.raises(ValueError, match="unsupported"):
+        load_checkpoint(path)
