@@ -1,10 +1,17 @@
 """Real gradient steps and exact interrupted CPU training recovery."""
 
+import random
+
 import numpy as np
 import torch
 
 from speechturn.batching import PreparedExample
-from speechturn.checkpoint import CHECKPOINT_FORMAT, load_checkpoint, save_checkpoint
+from speechturn.checkpoint import (
+    CHECKPOINT_FORMAT,
+    load_checkpoint,
+    save_checkpoint,
+    seed_everything,
+)
 from speechturn.config import SpeechConfig, TrainConfig
 from speechturn.model import SpeechLanguageModel
 from speechturn.training import train
@@ -75,3 +82,14 @@ def test_checkpoint_schema_is_exhaustive(tmp_path):
     assert set(payload) == {"format", "config", "model", "optimizer", "step", "rng"}
     assert payload["format"] == CHECKPOINT_FORMAT
     assert set(payload["rng"]) == {"python", "numpy", "torch"}
+
+
+def test_checkpoint_restores_three_rngs(tmp_path):
+    seed_everything(11)
+    path = tmp_path / "rng.pt"
+    save_checkpoint(path, SpeechLanguageModel(settings()))
+    expected = (random.random(), np.random.random(), torch.rand(2))
+    load_checkpoint(path, restore_rng=True)
+    actual = (random.random(), np.random.random(), torch.rand(2))
+    assert expected[:2] == actual[:2]
+    assert torch.equal(expected[2], actual[2])
