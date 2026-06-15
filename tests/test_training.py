@@ -104,3 +104,13 @@ def test_checkpoint_rejects_unknown_version(tmp_path):
     torch.save(payload, path)
     with pytest.raises(ValueError, match="unsupported"):
         load_checkpoint(path)
+
+
+def test_checkpoint_rejects_nonfinite_weights(tmp_path):
+    path = tmp_path / "bad.pt"
+    save_checkpoint(path, SpeechLanguageModel(settings()))
+    payload = torch.load(path, weights_only=True)
+    next(iter(payload["model"].values())).fill_(float("nan"))
+    torch.save(payload, path)
+    with pytest.raises(ValueError, match="finite"):
+        load_checkpoint(path)
