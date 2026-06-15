@@ -114,3 +114,10 @@ def test_checkpoint_rejects_nonfinite_weights(tmp_path):
     torch.save(payload, path)
     with pytest.raises(ValueError, match="finite"):
         load_checkpoint(path)
+
+
+def test_resume_rejects_configuration_changes(tmp_path):
+    path = tmp_path / "resume.pt"
+    train(examples(), path, settings(), TrainConfig(steps=1))
+    with pytest.raises(ValueError, match="matching configuration"):
+        train(examples(), path, SpeechConfig(n_mels=8), TrainConfig(steps=2), path)
