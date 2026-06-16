@@ -43,3 +43,27 @@ def test_cli_split_paths_remain_valid(tmp_path, capsys):
     capsys.readouterr()
     for path in output.glob("*.jsonl"):
         assert main(["validate", str(path)]) == 0
+
+
+def test_cli_cpu_training_and_inference(tmp_path, capsys):
+    sf.write(tmp_path / "tone.wav", np.sin(np.arange(800) * 0.1) * 0.1, 16000)
+    manifest = tmp_path / "train.jsonl"
+    save_manifest([AudioExample("tone", "tone.wav", "Q", "a")], manifest)
+    checkpoint = tmp_path / "model.pt"
+    assert main(["train", str(manifest), str(checkpoint), "--steps", "1"]) == 0
+    assert json.loads(capsys.readouterr().out)["step"] == 1
+    assert (
+        main(
+            [
+                "infer",
+                str(checkpoint),
+                str(tmp_path / "tone.wav"),
+                "--instruction",
+                "Q",
+                "--max-new-tokens",
+                "2",
+            ]
+        )
+        == 0
+    )
+    assert isinstance(json.loads(capsys.readouterr().out)["text"], str)
