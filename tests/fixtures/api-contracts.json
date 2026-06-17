@@ -12,5 +12,15 @@
       "imports": {}
     },
     "path": "speechturn/__init__.py"
+  },
+  "speechturn.__main__": {
+    "contract": {
+      "classes": {},
+      "constants": {},
+      "exports": null,
+      "functions": {},
+      "imports": {}
+    },
+    "path": "speechturn/__main__.py"
   }
 }
