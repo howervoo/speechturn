@@ -1,1 +1,16 @@
-{}
+{
+  "speechturn": {
+    "contract": {
+      "classes": {},
+      "constants": {
+        "__version__": "'0.1.0'"
+      },
+      "exports": [
+        "__version__"
+      ],
+      "functions": {},
+      "imports": {}
+    },
+    "path": "speechturn/__init__.py"
+  }
+}
