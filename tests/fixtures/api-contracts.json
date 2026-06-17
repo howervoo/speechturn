@@ -22,5 +22,71 @@
       "imports": {}
     },
     "path": "speechturn/__main__.py"
+  },
+  "speechturn.audio": {
+    "contract": {
+      "classes": {},
+      "constants": {},
+      "exports": [
+        "crop_audio",
+        "log_mel",
+        "mel_filterbank",
+        "read_audio",
+        "resample_audio",
+        "validate_waveform"
+      ],
+      "functions": {
+        "crop_audio": [
+          {
+            "arguments": "samples: np.ndarray, sample_rate: int, start: float=0.0, duration: float | None=None",
+            "async": false,
+            "decorators": [],
+            "returns": "np.ndarray"
+          }
+        ],
+        "log_mel": [
+          {
+            "arguments": "samples: np.ndarray, config: SpeechConfig | None=None",
+            "async": false,
+            "decorators": [],
+            "returns": "np.ndarray"
+          }
+        ],
+        "mel_filterbank": [
+          {
+            "arguments": "config: SpeechConfig",
+            "async": false,
+            "decorators": [],
+            "returns": "np.ndarray"
+          }
+        ],
+        "read_audio": [
+          {
+            "arguments": "path: str | Path, target_rate: int=16000",
+            "async": false,
+            "decorators": [],
+            "returns": "np.ndarray"
+          }
+        ],
+        "resample_audio": [
+          {
+            "arguments": "samples: np.ndarray, source_rate: int, target_rate: int",
+            "async": false,
+            "decorators": [],
+            "returns": "np.ndarray"
+          }
+        ],
+        "validate_waveform": [
+          {
+            "arguments": "samples: np.ndarray",
+            "async": false,
+            "decorators": [],
+            "returns": "np.ndarray"
+          }
+        ]
+      },
+      "imports": {}
+    },
+    "path": "speechturn/audio.py"
   }
 }
