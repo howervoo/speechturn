@@ -233,5 +233,47 @@
       "imports": {}
     },
     "path": "speechturn/batching.py"
+  },
+  "speechturn.checkpoint": {
+    "contract": {
+      "classes": {},
+      "constants": {
+        "CHECKPOINT_FORMAT": "'speechturn.checkpoint.v1'"
+      },
+      "exports": [
+        "CHECKPOINT_FORMAT",
+        "load_checkpoint",
+        "save_checkpoint",
+        "seed_everything"
+      ],
+      "functions": {
+        "load_checkpoint": [
+          {
+            "arguments": "path: str | Path, restore_rng: bool=False",
+            "async": false,
+            "decorators": [],
+            "returns": "tuple[SpeechLanguageModel, dict[str, Any] | None, int]"
+          }
+        ],
+        "save_checkpoint": [
+          {
+            "arguments": "path: str | Path, model: SpeechLanguageModel, optimizer: torch.optim.Optimizer | None=None, step: int=0",
+            "async": false,
+            "decorators": [],
+            "returns": "None"
+          }
+        ],
+        "seed_everything": [
+          {
+            "arguments": "seed: int",
+            "async": false,
+            "decorators": [],
+            "returns": "None"
+          }
+        ]
+      },
+      "imports": {}
+    },
+    "path": "speechturn/checkpoint.py"
   }
 }
