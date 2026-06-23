@@ -88,5 +88,41 @@
       "imports": {}
     },
     "path": "speechturn/audio.py"
+  },
+  "speechturn.backends": {
+    "contract": {
+      "classes": {
+        "QwenAudioBackend": {
+          "bases": [],
+          "decorators": [],
+          "fields": {},
+          "methods": {
+            "__init__": [
+              {
+                "arguments": "self, model_path: str | Path, allow_download: bool=False",
+                "async": false,
+                "decorators": [],
+                "returns": "None"
+              }
+            ],
+            "transcribe": [
+              {
+                "arguments": "self, audio_path: str | Path, instruction: str='Transcribe the speech.', max_new_tokens: int=128",
+                "async": false,
+                "decorators": [],
+                "returns": "str"
+              }
+            ]
+          }
+        }
+      },
+      "constants": {},
+      "exports": [
+        "QwenAudioBackend"
+      ],
+      "functions": {},
+      "imports": {}
+    },
+    "path": "speechturn/backends.py"
   }
 }
