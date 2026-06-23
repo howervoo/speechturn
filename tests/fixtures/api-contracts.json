@@ -124,5 +124,114 @@
       "imports": {}
     },
     "path": "speechturn/backends.py"
+  },
+  "speechturn.batching": {
+    "contract": {
+      "classes": {
+        "PreparedExample": {
+          "bases": [],
+          "decorators": [
+            "dataclass(frozen=True)"
+          ],
+          "fields": {
+            "features": {
+              "default": null,
+              "type": "np.ndarray"
+            },
+            "id": {
+              "default": null,
+              "type": "str"
+            },
+            "instruction": {
+              "default": null,
+              "type": "str"
+            },
+            "text": {
+              "default": null,
+              "type": "str"
+            }
+          },
+          "methods": {
+            "__post_init__": [
+              {
+                "arguments": "self",
+                "async": false,
+                "decorators": [],
+                "returns": "None"
+              }
+            ]
+          }
+        },
+        "SpeechBatch": {
+          "bases": [],
+          "decorators": [
+            "dataclass(frozen=True)"
+          ],
+          "fields": {
+            "attention_mask": {
+              "default": null,
+              "type": "torch.Tensor"
+            },
+            "feature_lengths": {
+              "default": null,
+              "type": "torch.Tensor"
+            },
+            "features": {
+              "default": null,
+              "type": "torch.Tensor"
+            },
+            "ids": {
+              "default": null,
+              "type": "list[str]"
+            },
+            "input_ids": {
+              "default": null,
+              "type": "torch.Tensor"
+            },
+            "labels": {
+              "default": null,
+              "type": "torch.Tensor"
+            }
+          },
+          "methods": {
+            "to": [
+              {
+                "arguments": "self, device: str | torch.device",
+                "async": false,
+                "decorators": [],
+                "returns": "SpeechBatch"
+              }
+            ]
+          }
+        }
+      },
+      "constants": {},
+      "exports": [
+        "PreparedExample",
+        "SpeechBatch",
+        "collate_examples",
+        "prepare_example"
+      ],
+      "functions": {
+        "collate_examples": [
+          {
+            "arguments": "examples: Sequence[PreparedExample], config: SpeechConfig | None=None",
+            "async": false,
+            "decorators": [],
+            "returns": "SpeechBatch"
+          }
+        ],
+        "prepare_example": [
+          {
+            "arguments": "record: AudioExample, root: str | Path, config: SpeechConfig | None=None",
+            "async": false,
+            "decorators": [],
+            "returns": "PreparedExample"
+          }
+        ]
+      },
+      "imports": {}
+    },
+    "path": "speechturn/batching.py"
   }
 }
