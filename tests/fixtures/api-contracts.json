@@ -275,5 +275,35 @@
       "imports": {}
     },
     "path": "speechturn/checkpoint.py"
+  },
+  "speechturn.cli": {
+    "contract": {
+      "classes": {},
+      "constants": {},
+      "exports": [
+        "main",
+        "parser"
+      ],
+      "functions": {
+        "main": [
+          {
+            "arguments": "argv: list[str] | None=None",
+            "async": false,
+            "decorators": [],
+            "returns": "int"
+          }
+        ],
+        "parser": [
+          {
+            "arguments": "",
+            "async": false,
+            "decorators": [],
+            "returns": "argparse.ArgumentParser"
+          }
+        ]
+      },
+      "imports": {}
+    },
+    "path": "speechturn/cli.py"
   }
 }
