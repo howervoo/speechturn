@@ -504,5 +504,114 @@
       "imports": {}
     },
     "path": "speechturn/config.py"
+  },
+  "speechturn.data": {
+    "contract": {
+      "classes": {
+        "AudioExample": {
+          "bases": [],
+          "decorators": [
+            "dataclass(frozen=True)"
+          ],
+          "fields": {
+            "audio": {
+              "default": null,
+              "type": "str"
+            },
+            "duration": {
+              "default": "None",
+              "type": "float | None"
+            },
+            "id": {
+              "default": null,
+              "type": "str"
+            },
+            "instruction": {
+              "default": null,
+              "type": "str"
+            },
+            "language": {
+              "default": "'und'",
+              "type": "str"
+            },
+            "speaker": {
+              "default": "'unknown'",
+              "type": "str"
+            },
+            "start": {
+              "default": "0.0",
+              "type": "float"
+            },
+            "text": {
+              "default": null,
+              "type": "str"
+            }
+          },
+          "methods": {
+            "__post_init__": [
+              {
+                "arguments": "self",
+                "async": false,
+                "decorators": [],
+                "returns": "None"
+              }
+            ],
+            "from_dict": [
+              {
+                "arguments": "cls, values: dict[str, Any]",
+                "async": false,
+                "decorators": [
+                  "classmethod"
+                ],
+                "returns": "AudioExample"
+              }
+            ],
+            "to_dict": [
+              {
+                "arguments": "self",
+                "async": false,
+                "decorators": [],
+                "returns": "dict[str, Any]"
+              }
+            ]
+          }
+        }
+      },
+      "constants": {},
+      "exports": [
+        "AudioExample",
+        "load_manifest",
+        "save_manifest",
+        "split_by_speaker"
+      ],
+      "functions": {
+        "load_manifest": [
+          {
+            "arguments": "path: str | Path, check_audio: bool=False",
+            "async": false,
+            "decorators": [],
+            "returns": "list[AudioExample]"
+          }
+        ],
+        "save_manifest": [
+          {
+            "arguments": "records: Sequence[AudioExample], path: str | Path",
+            "async": false,
+            "decorators": [],
+            "returns": "None"
+          }
+        ],
+        "split_by_speaker": [
+          {
+            "arguments": "records: Sequence[AudioExample], fractions: tuple[float, float, float]=(0.8, 0.1, 0.1), seed: int=7",
+            "async": false,
+            "decorators": [],
+            "returns": "dict[str, list[AudioExample]]"
+          }
+        ]
+      },
+      "imports": {}
+    },
+    "path": "speechturn/data.py"
   }
 }
