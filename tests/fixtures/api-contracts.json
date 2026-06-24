@@ -814,5 +814,119 @@
       "imports": {}
     },
     "path": "speechturn/model.py"
+  },
+  "speechturn.streaming": {
+    "contract": {
+      "classes": {
+        "AudioChunker": {
+          "bases": [],
+          "decorators": [],
+          "fields": {},
+          "methods": {
+            "__init__": [
+              {
+                "arguments": "self, chunk_samples: int",
+                "async": false,
+                "decorators": [],
+                "returns": "None"
+              }
+            ],
+            "feed": [
+              {
+                "arguments": "self, samples: np.ndarray",
+                "async": false,
+                "decorators": [],
+                "returns": "list[np.ndarray]"
+              }
+            ],
+            "flush": [
+              {
+                "arguments": "self",
+                "async": false,
+                "decorators": [],
+                "returns": "list[np.ndarray]"
+              }
+            ]
+          }
+        },
+        "StreamEvent": {
+          "bases": [],
+          "decorators": [
+            "dataclass(frozen=True)"
+          ],
+          "fields": {
+            "kind": {
+              "default": null,
+              "type": "str"
+            },
+            "payload": {
+              "default": "''",
+              "type": "str"
+            },
+            "sequence": {
+              "default": null,
+              "type": "int"
+            },
+            "timestamp": {
+              "default": null,
+              "type": "float"
+            }
+          },
+          "methods": {
+            "__post_init__": [
+              {
+                "arguments": "self",
+                "async": false,
+                "decorators": [],
+                "returns": "None"
+              }
+            ]
+          }
+        },
+        "StreamSession": {
+          "bases": [],
+          "decorators": [],
+          "fields": {},
+          "methods": {
+            "__init__": [
+              {
+                "arguments": "self",
+                "async": false,
+                "decorators": [],
+                "returns": "None"
+              }
+            ],
+            "accept": [
+              {
+                "arguments": "self, event: StreamEvent",
+                "async": false,
+                "decorators": [],
+                "returns": "None"
+              }
+            ],
+            "statistics": [
+              {
+                "arguments": "self, audio_seconds: float",
+                "async": false,
+                "decorators": [],
+                "returns": "dict[str, Any]"
+              }
+            ]
+          }
+        }
+      },
+      "constants": {
+        "TRANSITIONS": "{'idle': {'start': 'open'}, 'open': {'audio': 'open', 'text': 'open', 'final': 'closed', 'error': 'failed'}, 'closed': {}, 'failed': {}}"
+      },
+      "exports": [
+        "AudioChunker",
+        "StreamEvent",
+        "StreamSession",
+        "TRANSITIONS"
+      ],
+      "functions": {},
+      "imports": {}
+    },
+    "path": "speechturn/streaming.py"
   }
 }
