@@ -305,5 +305,204 @@
       "imports": {}
     },
     "path": "speechturn/cli.py"
+  },
+  "speechturn.config": {
+    "contract": {
+      "classes": {
+        "SpeechConfig": {
+          "bases": [],
+          "decorators": [
+            "dataclass(frozen=True)"
+          ],
+          "fields": {
+            "decoder_layers": {
+              "default": "1",
+              "type": "int"
+            },
+            "downsample": {
+              "default": "2",
+              "type": "int"
+            },
+            "dropout": {
+              "default": "0.0",
+              "type": "float"
+            },
+            "encoder_dim": {
+              "default": "32",
+              "type": "int"
+            },
+            "encoder_layers": {
+              "default": "1",
+              "type": "int"
+            },
+            "freeze_decoder": {
+              "default": "False",
+              "type": "bool"
+            },
+            "freeze_encoder": {
+              "default": "False",
+              "type": "bool"
+            },
+            "hop_length": {
+              "default": "160",
+              "type": "int"
+            },
+            "max_audio_tokens": {
+              "default": "512",
+              "type": "int"
+            },
+            "max_text_tokens": {
+              "default": "256",
+              "type": "int"
+            },
+            "model_dim": {
+              "default": "48",
+              "type": "int"
+            },
+            "n_fft": {
+              "default": "400",
+              "type": "int"
+            },
+            "n_mels": {
+              "default": "40",
+              "type": "int"
+            },
+            "num_heads": {
+              "default": "4",
+              "type": "int"
+            },
+            "projection": {
+              "default": "'mlp'",
+              "type": "str"
+            },
+            "sample_rate": {
+              "default": "16000",
+              "type": "int"
+            },
+            "vocab_size": {
+              "default": "260",
+              "type": "int"
+            },
+            "win_length": {
+              "default": "400",
+              "type": "int"
+            }
+          },
+          "methods": {
+            "__post_init__": [
+              {
+                "arguments": "self",
+                "async": false,
+                "decorators": [],
+                "returns": "None"
+              }
+            ],
+            "from_dict": [
+              {
+                "arguments": "cls, values: dict[str, Any]",
+                "async": false,
+                "decorators": [
+                  "classmethod"
+                ],
+                "returns": "SpeechConfig"
+              }
+            ],
+            "to_dict": [
+              {
+                "arguments": "self",
+                "async": false,
+                "decorators": [],
+                "returns": "dict[str, Any]"
+              }
+            ]
+          }
+        },
+        "TrainConfig": {
+          "bases": [],
+          "decorators": [
+            "dataclass(frozen=True)"
+          ],
+          "fields": {
+            "batch_size": {
+              "default": "2",
+              "type": "int"
+            },
+            "gradient_accumulation": {
+              "default": "1",
+              "type": "int"
+            },
+            "learning_rate": {
+              "default": "0.001",
+              "type": "float"
+            },
+            "max_grad_norm": {
+              "default": "1.0",
+              "type": "float"
+            },
+            "save_every": {
+              "default": "0",
+              "type": "int"
+            },
+            "seed": {
+              "default": "7",
+              "type": "int"
+            },
+            "steps": {
+              "default": "20",
+              "type": "int"
+            },
+            "weight_decay": {
+              "default": "0.0",
+              "type": "float"
+            }
+          },
+          "methods": {
+            "__post_init__": [
+              {
+                "arguments": "self",
+                "async": false,
+                "decorators": [],
+                "returns": "None"
+              }
+            ],
+            "to_dict": [
+              {
+                "arguments": "self",
+                "async": false,
+                "decorators": [],
+                "returns": "dict[str, Any]"
+              }
+            ]
+          }
+        }
+      },
+      "constants": {},
+      "exports": [
+        "SpeechConfig",
+        "TrainConfig",
+        "finite_number",
+        "positive_integer"
+      ],
+      "functions": {
+        "finite_number": [
+          {
+            "arguments": "value: Any, name: str, minimum: float=0.0",
+            "async": false,
+            "decorators": [],
+            "returns": "float"
+          }
+        ],
+        "positive_integer": [
+          {
+            "arguments": "value: Any, name: str, minimum: int=1",
+            "async": false,
+            "decorators": [],
+            "returns": "int"
+          }
+        ]
+      },
+      "imports": {}
+    },
+    "path": "speechturn/config.py"
   }
 }
