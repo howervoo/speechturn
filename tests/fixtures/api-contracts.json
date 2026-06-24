@@ -730,5 +730,89 @@
       "imports": {}
     },
     "path": "speechturn/metrics.py"
+  },
+  "speechturn.model": {
+    "contract": {
+      "classes": {
+        "AcousticEncoder": {
+          "bases": [
+            "nn.Module"
+          ],
+          "decorators": [],
+          "fields": {},
+          "methods": {
+            "__init__": [
+              {
+                "arguments": "self, config: SpeechConfig",
+                "async": false,
+                "decorators": [],
+                "returns": "None"
+              }
+            ],
+            "forward": [
+              {
+                "arguments": "self, features: torch.Tensor, lengths: torch.Tensor",
+                "async": false,
+                "decorators": [],
+                "returns": "tuple[torch.Tensor, torch.Tensor]"
+              }
+            ]
+          }
+        },
+        "SpeechLanguageModel": {
+          "bases": [
+            "nn.Module"
+          ],
+          "decorators": [],
+          "fields": {},
+          "methods": {
+            "__init__": [
+              {
+                "arguments": "self, config: SpeechConfig | None=None",
+                "async": false,
+                "decorators": [],
+                "returns": "None"
+              }
+            ],
+            "forward": [
+              {
+                "arguments": "self, features: torch.Tensor, lengths: torch.Tensor, input_ids: torch.Tensor, attention_mask: torch.Tensor | None=None",
+                "async": false,
+                "decorators": [],
+                "returns": "torch.Tensor"
+              }
+            ],
+            "generate": [
+              {
+                "arguments": "self, features: torch.Tensor, lengths: torch.Tensor, prompt_ids: torch.Tensor | None=None, max_new_tokens: int=32, temperature: float=0.0",
+                "async": false,
+                "decorators": [
+                  "torch.inference_mode()"
+                ],
+                "returns": "torch.Tensor"
+              }
+            ]
+          }
+        }
+      },
+      "constants": {},
+      "exports": [
+        "AcousticEncoder",
+        "SpeechLanguageModel",
+        "causal_loss"
+      ],
+      "functions": {
+        "causal_loss": [
+          {
+            "arguments": "logits: torch.Tensor, labels: torch.Tensor",
+            "async": false,
+            "decorators": [],
+            "returns": "torch.Tensor"
+          }
+        ]
+      },
+      "imports": {}
+    },
+    "path": "speechturn/model.py"
   }
 }
