@@ -613,5 +613,122 @@
       "imports": {}
     },
     "path": "speechturn/data.py"
+  },
+  "speechturn.metrics": {
+    "contract": {
+      "classes": {
+        "ErrorCounts": {
+          "bases": [],
+          "decorators": [
+            "dataclass(frozen=True)"
+          ],
+          "fields": {
+            "deletions": {
+              "default": "0",
+              "type": "int"
+            },
+            "hypothesis_length": {
+              "default": "0",
+              "type": "int"
+            },
+            "insertions": {
+              "default": "0",
+              "type": "int"
+            },
+            "reference_length": {
+              "default": "0",
+              "type": "int"
+            },
+            "substitutions": {
+              "default": "0",
+              "type": "int"
+            }
+          },
+          "methods": {
+            "errors": [
+              {
+                "arguments": "self",
+                "async": false,
+                "decorators": [
+                  "property"
+                ],
+                "returns": "int"
+              }
+            ],
+            "rate": [
+              {
+                "arguments": "self",
+                "async": false,
+                "decorators": [
+                  "property"
+                ],
+                "returns": "float"
+              }
+            ],
+            "to_dict": [
+              {
+                "arguments": "self",
+                "async": false,
+                "decorators": [],
+                "returns": "dict[str, int | float]"
+              }
+            ]
+          }
+        }
+      },
+      "constants": {},
+      "exports": [
+        "ErrorCounts",
+        "aggregate_counts",
+        "character_error_rate",
+        "edit_counts",
+        "normalize_text",
+        "word_error_rate"
+      ],
+      "functions": {
+        "aggregate_counts": [
+          {
+            "arguments": "results: Sequence[ErrorCounts]",
+            "async": false,
+            "decorators": [],
+            "returns": "ErrorCounts"
+          }
+        ],
+        "character_error_rate": [
+          {
+            "arguments": "reference: str, hypothesis: str",
+            "async": false,
+            "decorators": [],
+            "returns": "ErrorCounts"
+          }
+        ],
+        "edit_counts": [
+          {
+            "arguments": "reference: Sequence[str], hypothesis: Sequence[str]",
+            "async": false,
+            "decorators": [],
+            "returns": "ErrorCounts"
+          }
+        ],
+        "normalize_text": [
+          {
+            "arguments": "text: str, lowercase: bool=False, remove_punctuation: bool=False",
+            "async": false,
+            "decorators": [],
+            "returns": "str"
+          }
+        ],
+        "word_error_rate": [
+          {
+            "arguments": "reference: str, hypothesis: str",
+            "async": false,
+            "decorators": [],
+            "returns": "ErrorCounts"
+          }
+        ]
+      },
+      "imports": {}
+    },
+    "path": "speechturn/metrics.py"
   }
 }
