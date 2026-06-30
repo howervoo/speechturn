@@ -928,5 +928,73 @@
       "imports": {}
     },
     "path": "speechturn/streaming.py"
+  },
+  "speechturn.tokenizer": {
+    "contract": {
+      "classes": {
+        "ByteTokenizer": {
+          "bases": [],
+          "decorators": [],
+          "fields": {
+            "bos_id": {
+              "value": "1"
+            },
+            "eos_id": {
+              "value": "2"
+            },
+            "pad_id": {
+              "value": "0"
+            },
+            "unk_id": {
+              "value": "3"
+            },
+            "vocab_size": {
+              "value": "260"
+            }
+          },
+          "methods": {
+            "decode": [
+              {
+                "arguments": "self, tokens: Iterable[int], skip_special: bool=True, errors: str='strict'",
+                "async": false,
+                "decorators": [],
+                "returns": "str"
+              }
+            ],
+            "encode": [
+              {
+                "arguments": "self, text: str, bos: bool=False, eos: bool=False",
+                "async": false,
+                "decorators": [],
+                "returns": "list[int]"
+              }
+            ],
+            "prompt": [
+              {
+                "arguments": "self, instruction: str",
+                "async": false,
+                "decorators": [],
+                "returns": "list[int]"
+              }
+            ],
+            "training_pair": [
+              {
+                "arguments": "self, instruction: str, answer: str",
+                "async": false,
+                "decorators": [],
+                "returns": "tuple[list[int], list[int]]"
+              }
+            ]
+          }
+        }
+      },
+      "constants": {},
+      "exports": [
+        "ByteTokenizer"
+      ],
+      "functions": {},
+      "imports": {}
+    },
+    "path": "speechturn/tokenizer.py"
   }
 }
