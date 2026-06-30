@@ -996,5 +996,49 @@
       "imports": {}
     },
     "path": "speechturn/tokenizer.py"
+  },
+  "speechturn.training": {
+    "contract": {
+      "classes": {
+        "TrainResult": {
+          "bases": [],
+          "decorators": [
+            "dataclass(frozen=True)"
+          ],
+          "fields": {
+            "losses": {
+              "default": null,
+              "type": "list[float]"
+            },
+            "model": {
+              "default": null,
+              "type": "SpeechLanguageModel"
+            },
+            "step": {
+              "default": null,
+              "type": "int"
+            }
+          },
+          "methods": {}
+        }
+      },
+      "constants": {},
+      "exports": [
+        "TrainResult",
+        "train"
+      ],
+      "functions": {
+        "train": [
+          {
+            "arguments": "examples: Sequence[PreparedExample], checkpoint: str | Path, model_config: SpeechConfig | None=None, train_config: TrainConfig | None=None, resume: str | Path | None=None",
+            "async": false,
+            "decorators": [],
+            "returns": "TrainResult"
+          }
+        ]
+      },
+      "imports": {}
+    },
+    "path": "speechturn/training.py"
   }
 }
