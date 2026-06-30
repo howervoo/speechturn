@@ -3,7 +3,7 @@
     "contract": {
       "classes": {},
       "constants": {
-        "__version__": "'0.1.0'"
+        "__version__": "'0.1.1'"
       },
       "exports": [
         "__version__"

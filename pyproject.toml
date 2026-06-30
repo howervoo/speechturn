@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "speechturn"
-version = "0.1.0"
+version = "0.1.1"
 description = "Reproducible audio-instruction data, tiny speech-language training, and streaming contracts"
 readme = "README.md"
 requires-python = ">=3.11"

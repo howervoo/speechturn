@@ -56,3 +56,16 @@ speechturn infer output/model.pt data/sample.wav --instruction '转写语音'
 测试覆盖音频与配置边界、UTF-8、数据分割、因果与填充掩码、梯度、恢复一致性、事件状态和完整公开 API 快照。修改接口时需明确更新快照。运行 `make check` 后提交；不包含用户音频、密钥或预训练权重。
 
 MIT License。
+
+## 可执行演示与文档
+
+```sh
+.venv/bin/python examples/synthetic-demo.py --output /tmp/speechturn-demo
+```
+
+演示实际生成合成音频、训练微型模型、加载检查点并生成文本；输出包含损失和配置。
+
+- [训练与恢复](docs/training.md)
+- [数据与流式协议](docs/contracts.md)
+- [可选预训练模型与官方参考](docs/pretrained.md)
+- [变更日志](CHANGELOG.md)

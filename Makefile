@@ -12,11 +12,11 @@ build:
 test:
 	$(BIN)/python -m pytest
 format:
-	$(BIN)/ruff format src tests
+	$(BIN)/ruff format src tests examples
 format-check:
-	$(BIN)/ruff format --check src tests
+	$(BIN)/ruff format --check src tests examples
 lint:
-	$(BIN)/ruff check src tests
+	$(BIN)/ruff check src tests examples
 typecheck:
 	$(BIN)/mypy src/speechturn
 check: build test format-check lint typecheck
