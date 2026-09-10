@@ -76,6 +76,8 @@ class StreamEvent:
             raise ValueError("unknown event kind")
         if not isinstance(self.payload, str):
             raise ValueError("payload must be text")
+        if self.kind == "error" and not self.payload.strip():
+            raise ValueError("error events require a non-empty payload")
 
 
 class StreamSession:
