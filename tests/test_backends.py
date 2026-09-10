@@ -3,6 +3,7 @@
 import sys
 from types import SimpleNamespace
 
+import pytest
 import numpy as np
 import soundfile as sf
 import torch
@@ -71,3 +72,19 @@ def test_qwen_adapter_contract(tmp_path, monkeypatch):
     assert calls["process"]["audios"][0].shape == (160,)
     assert calls["decode"][0] == [[42, 2]]
     assert calls["generate"]["max_new_tokens"] == 8
+
+
+def test_qwen_backend_reports_missing_transformers(tmp_path, monkeypatch):
+    """QwenAudioBackend must raise ImportError with install hint when transformers is absent."""
+    import builtins
+
+    original_import = builtins.__import__
+
+    def mock_import(name, *args, **kwargs):
+        if name == "transformers":
+            raise ImportError("No module named transformers")
+        return original_import(name, *args, **kwargs)
+
+    monkeypatch.setattr(builtins, "__import__", mock_import)
+    with pytest.raises(ImportError, match="install speechturn.*pretrained.*"):
+        QwenAudioBackend(tmp_path / "fake-model")
