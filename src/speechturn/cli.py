@@ -18,6 +18,9 @@ def parser() -> argparse.ArgumentParser:
         prog="speechturn", description="Reproducible speech-language experiments"
     )
     command.add_argument("--version", action="version", version=__version__)
+    command.add_argument(
+        "--quiet", action="store_true", help="suppress JSON output; exit code only"
+    )
     sub = command.add_subparsers(dest="command", required=True)
     validate = sub.add_parser("validate", help="validate a JSONL manifest and audio paths")
     validate.add_argument("manifest", type=Path)
@@ -118,7 +121,8 @@ def main(argv: list[str] | None = None) -> int:
                 features, torch.tensor([features.shape[1]]), prompt, args.max_new_tokens
             )
             result = {"text": tokenizer.decode(tokens[0].tolist(), errors="replace"), "step": step}
-        print(json.dumps(result, ensure_ascii=False, allow_nan=False))
+        if not args.quiet:
+            print(json.dumps(result, ensure_ascii=False, allow_nan=False))
         return 0
     except (ValueError, OSError, RuntimeError, ImportError) as error:
         command.exit(2, f"speechturn: {error}\n")
