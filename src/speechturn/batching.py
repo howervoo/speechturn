@@ -59,8 +59,11 @@ def prepare_example(
     record: AudioExample, root: str | Path, config: SpeechConfig | None = None
 ) -> PreparedExample:
     settings = config or SpeechConfig()
-    audio = read_audio(Path(root) / record.audio, settings.sample_rate)
-    cropped = crop_audio(audio, settings.sample_rate, record.start, record.duration)
+    try:
+        audio = read_audio(Path(root) / record.audio, settings.sample_rate)
+        cropped = crop_audio(audio, settings.sample_rate, record.start, record.duration)
+    except (OSError, ValueError) as error:
+        raise ValueError(f"example {record.id!r}: {error}") from error
     return PreparedExample(record.id, log_mel(cropped, settings), record.instruction, record.text)
 
 
