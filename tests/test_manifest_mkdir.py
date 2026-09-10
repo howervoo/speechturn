@@ -40,3 +40,33 @@ def test_save_manifest_existing_dir(tmp_path: Path):
     ]
     save_manifest(records, target)
     assert target.exists()
+
+
+@pytest.mark.parametrize("duplicate", [False, True])
+def test_invalid_manifest_does_not_create_directories(tmp_path: Path, duplicate):
+    record = AudioExample("duplicate", "audio.wav", "Q", "a")
+    records = [record, record] if duplicate else []
+    target = tmp_path / "missing" / "nested" / "manifest.jsonl"
+    with pytest.raises(ValueError, match="non-empty and have unique IDs"):
+        save_manifest(records, target)
+    assert not (tmp_path / "missing").exists()
+
+
+def test_save_manifest_preserves_conflicting_parent_file(tmp_path: Path):
+    parent = tmp_path / "parent"
+    parent.write_text("existing data", encoding="utf-8")
+    record = AudioExample("test", "audio.wav", "Q", "a")
+    with pytest.raises(OSError):
+        save_manifest([record], parent / "manifest.jsonl")
+    assert parent.read_text(encoding="utf-8") == "existing data"
+
+
+def test_save_manifest_preserves_conflicting_output_directory(tmp_path: Path):
+    target = tmp_path / "manifest.jsonl"
+    target.mkdir()
+    sentinel = target / "existing.txt"
+    sentinel.write_text("existing data", encoding="utf-8")
+    record = AudioExample("test", "audio.wav", "Q", "a")
+    with pytest.raises(OSError):
+        save_manifest([record], target)
+    assert sentinel.read_text(encoding="utf-8") == "existing data"
