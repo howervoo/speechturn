@@ -74,3 +74,26 @@ def test_crop_does_not_modify_original():
 def test_invalid_crop_ranges(start, duration):
     with pytest.raises(ValueError):
         crop_audio(np.ones(100), 10, start, duration)
+
+
+def test_crop_exact_full_duration():
+    """Cropping with exact full duration should return a copy of the entire signal."""
+    values = np.arange(100, dtype=np.float32)
+    output = crop_audio(values, 10, start=0, duration=10)
+    assert np.array_equal(output, values)
+    assert not np.shares_memory(output, values)
+
+
+def test_crop_duration_clamps_to_audio_end():
+    """Duration extending past the audio end should be clamped, not raise."""
+    values = np.arange(100, dtype=np.float32)
+    output = crop_audio(values, 10, start=5, duration=100)
+    assert np.array_equal(output, np.arange(50, 100))
+
+
+def test_crop_returns_independent_copy():
+    """Modifying the crop output must not affect the original waveform."""
+    values = np.arange(100, dtype=np.float32)
+    output = crop_audio(values, 10, start=1, duration=2)
+    output[:] = 999
+    assert values[10] == 10
