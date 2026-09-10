@@ -36,7 +36,7 @@ def save_checkpoint(
     payload = {
         "format": CHECKPOINT_FORMAT,
         "config": model.config.to_dict(),
-        "model": model.state_dict(),
+        "model": {key: tensor.cpu() for key, tensor in model.state_dict().items()},
         "optimizer": optimizer.state_dict() if optimizer is not None else None,
         "step": step,
         "rng": {
