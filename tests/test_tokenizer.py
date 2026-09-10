@@ -42,3 +42,14 @@ def test_incomplete_utf8_policy():
     with pytest.raises(UnicodeDecodeError):
         tokenizer.decode([228 + 4])
     assert tokenizer.decode([228 + 4], errors="replace") == "�"
+
+
+def test_prompt_rejects_empty_instruction():
+    """Verify prompt() explicitly rejects whitespace-only instructions."""
+    tokenizer = ByteTokenizer()
+    with pytest.raises(ValueError, match="instruction must be non-empty text"):
+        tokenizer.prompt("")
+    with pytest.raises(ValueError, match="instruction must be non-empty text"):
+        tokenizer.prompt("   ")
+    with pytest.raises(ValueError, match="instruction must be non-empty text"):
+        tokenizer.prompt("\t\n")
