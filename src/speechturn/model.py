@@ -155,6 +155,10 @@ class SpeechLanguageModel(nn.Module):
         )
         if tokens.ndim != 2 or tokens.shape[1] + max_new_tokens > self.config.max_text_tokens:
             raise ValueError("generation would exceed max_text_tokens")
+        if tokens.shape[1] < 1:
+            raise ValueError("prompt_ids must contain at least one token per row")
+        if not tokens.ne(0).any(dim=1).all():
+            raise ValueError("each prompt row needs at least one non-pad token")
         was_training = self.training
         self.eval()
         generated = []
