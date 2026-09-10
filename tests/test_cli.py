@@ -67,3 +67,19 @@ def test_cli_cpu_training_and_inference(tmp_path, capsys):
         == 0
     )
     assert isinstance(json.loads(capsys.readouterr().out)["text"], str)
+
+
+def test_cli_quiet_flag_suppresses_output(capsys):
+    """--quiet should suppress JSON output while still returning exit code 0."""
+    assert main(["--quiet", "evaluate", "hello world", "hello world"]) == 0
+    captured = capsys.readouterr()
+    assert captured.out == ""
+    assert captured.err == ""
+
+
+def test_cli_quiet_flag_with_error_still_reports(capsys):
+    """--quiet should not suppress error messages."""
+    with pytest.raises(SystemExit) as error:
+        main(["--quiet", "validate", "/nonexistent/path.jsonl"])
+    assert error.value.code == 2
+    assert "speechturn:" in capsys.readouterr().err
