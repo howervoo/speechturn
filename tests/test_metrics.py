@@ -1,6 +1,7 @@
 """Independent edit-distance examples and whole-corpus weighting."""
 
 import itertools
+import pytest
 
 from speechturn.metrics import (
     aggregate_counts,
@@ -73,3 +74,25 @@ def test_metric_serialization_complete():
         "errors": 1,
         "rate": 1.0,
     }
+
+
+def test_aggregate_counts_handles_empty_sequence():
+    """aggregate_counts with no inputs should return zero-length ErrorCounts."""
+    result = aggregate_counts([])
+    assert result.substitutions == 0
+    assert result.deletions == 0
+    assert result.insertions == 0
+    assert result.reference_length == 0
+    assert result.hypothesis_length == 0
+    assert result.errors == 0
+    assert result.rate == 0
+
+
+def test_normalize_text_rejects_non_text_input():
+    """normalize_text must reject non-string inputs explicitly."""
+    with pytest.raises(ValueError, match="transcripts must be text"):
+        normalize_text(123)
+    with pytest.raises(ValueError, match="transcripts must be text"):
+        normalize_text(None)
+    with pytest.raises(ValueError, match="transcripts must be text"):
+        normalize_text(["list"])
