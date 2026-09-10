@@ -44,3 +44,35 @@ def test_configuration_is_immutable():
 
     with pytest.raises(FrozenInstanceError):
         SpeechConfig().n_mels = 80
+
+
+def test_train_config_allows_zero_save_every():
+    """save_every=0 disables intermediate checkpoints and must be accepted."""
+    settings = TrainConfig(save_every=0)
+    assert settings.save_every == 0
+
+
+def test_train_config_allows_zero_seed():
+    """seed=0 is a valid deterministic seed value."""
+    settings = TrainConfig(seed=0)
+    assert settings.seed == 0
+
+
+def test_train_config_rejects_zero_learning_rate():
+    """learning_rate=0 would prevent training progress."""
+    with pytest.raises(ValueError, match="learning_rate and max_grad_norm must be positive"):
+        TrainConfig(learning_rate=0)
+
+
+def test_train_config_rejects_zero_max_grad_norm():
+    """max_grad_norm=0 would zero out all gradients."""
+    with pytest.raises(ValueError, match="learning_rate and max_grad_norm must be positive"):
+        TrainConfig(max_grad_norm=0)
+
+
+def test_train_config_is_immutable():
+    """TrainConfig must be frozen like SpeechConfig."""
+    from dataclasses import FrozenInstanceError
+
+    with pytest.raises(FrozenInstanceError):
+        TrainConfig().steps = 100
