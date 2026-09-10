@@ -79,7 +79,9 @@ def save_manifest(records: Sequence[AudioExample], path: str | Path) -> None:
         json.dumps(record.to_dict(), ensure_ascii=False, sort_keys=True, allow_nan=False) + "\n"
         for record in records
     )
-    Path(path).write_text(text, encoding="utf-8")
+    target = Path(path)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(text, encoding="utf-8")
 
 
 def split_by_speaker(
