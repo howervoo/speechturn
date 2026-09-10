@@ -51,6 +51,12 @@ def train(
             raise ValueError("resume requires matching configuration and optimizer state")
     if start > options.steps:
         raise ValueError("checkpoint is beyond the requested total steps")
+    # Validate checkpoint path is writable before starting training.
+    checkpoint_path = Path(checkpoint)
+    try:
+        checkpoint_path.parent.mkdir(parents=True, exist_ok=True)
+    except OSError as error:
+        raise ValueError(f"cannot create checkpoint directory: {error}") from error
     optimizer = torch.optim.AdamW(
         [parameter for parameter in model.parameters() if parameter.requires_grad],
         lr=options.learning_rate,
